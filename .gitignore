@@ -170,5 +170,8 @@ cython_debug/
 # PyPI configuration file
 .pypirc
 
+# Ignore all files with the .csv extension
+*.csv
+
 # Ignore all files with the .png extension
 *.png

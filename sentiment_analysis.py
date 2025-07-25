@@ -19,6 +19,7 @@ class SentimentAnalyzer:
             self.model = AutoModelForSequenceClassification.from_pretrained(model_name)
             self.model.to(self.device)
             self.sentiment_map = self.model.config.id2label
+            self.sentiment_map = self.model.config.id2label
             self.label2id = {v.lower(): k for k, v in self.sentiment_map.items()}
             self.pos_id = self.label2id.get('positive')
             self.neg_id = self.label2id.get('negative')

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="remove: requirements.txt">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamlit_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/streamlit_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction">
+      <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -522,7 +520,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753457610039</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction">
+      <option name="closed" value="true" />
+      <created>1753458924681</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1753458924681</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add BBC News CSV file for UK stock market data integration&#10;&#10;Added `bbc_news.csv` containing comprehensive news data to support UK stock market analysis." />
     <MESSAGE value="Update .gitignore to exclude .csv files" />
     <MESSAGE value="feat: add LSTM analysis HTML for USA stock market" />
     <MESSAGE value="refactor: rename, streamline, and reduce content in stock market news analysis notebook" />
@@ -577,7 +582,8 @@
     <MESSAGE value="feat: add Streamlit app for interactive data visualization" />
     <MESSAGE value="feat: update workspace configuration for Streamlit app integration" />
     <MESSAGE value="remove: requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove: requirements.txt" />
+    <MESSAGE value="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

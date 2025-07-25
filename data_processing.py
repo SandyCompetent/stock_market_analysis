@@ -1,23 +1,25 @@
 import pandas as pd
 import yfinance as yf
 import numpy as np
-import kagglehub
-from kagglehub import KaggleDatasetAdapter
+
+
+# import kagglehub
+# from kagglehub import KaggleDatasetAdapter
 
 
 def load_and_analyze_news_data(file_path, target_symbol):
     print("Loading and selecting news data...")
-    try:
-        df = kagglehub.load_dataset(
-            KaggleDatasetAdapter.PANDAS,
-            "miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests",
-            "analyst_ratings_processed.csv"
-        )
-    except Exception as e:
-        print(f"⚠️ ERROR: Failed to load dataset from Kaggle: {e}")
-        return None
+    # try:
+    #     df = kagglehub.load_dataset(
+    #         KaggleDatasetAdapter.PANDAS,
+    #         "miguelaenlle/massive-stock-news-analysis-db-for-nlpbacktests",
+    #         "analyst_ratings_processed.csv"
+    #     )
+    # except Exception as e:
+    #     print(f"⚠️ ERROR: Failed to load dataset from Kaggle: {e}")
+    #     return None
 
-    # df = pd.read_csv(file_path)
+    df = pd.read_csv(file_path)
 
     df['Date'] = pd.to_datetime(df['date'], format='mixed', utc=True, errors='coerce')
     df = df.dropna(subset=['Date'])

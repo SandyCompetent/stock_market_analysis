@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction">
-      <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration">
+      <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -528,7 +529,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753458924681</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration">
+      <option name="closed" value="true" />
+      <created>1753459017365</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1753459017365</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,7 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Update .gitignore to exclude .csv files" />
     <MESSAGE value="feat: add LSTM analysis HTML for USA stock market" />
     <MESSAGE value="refactor: rename, streamline, and reduce content in stock market news analysis notebook" />
     <MESSAGE value="chore: delete analysis_using_lstm.html file to clean up unused resources" />
@@ -583,7 +591,8 @@
     <MESSAGE value="feat: update workspace configuration for Streamlit app integration" />
     <MESSAGE value="remove: requirements.txt" />
     <MESSAGE value="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction" />
+    <MESSAGE value="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

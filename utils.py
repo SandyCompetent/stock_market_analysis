@@ -59,32 +59,44 @@ def plot_model_results(history, y_test, predictions, test_dates, stock_symbol, m
     axes[1].legend()
 
     plt.tight_layout()
-    return fig  # --- Return the figure object ---
+
+    safe_model_name = model_name.replace(" ", "_").replace("(", "").replace(")", "")
+    save_path = os.path.join(cfg.OUTPUT_DIR,
+                             f"{stock_symbol}_{safe_model_name}_analysis.png")  # <-- Use cfg.OUTPUT_DIR here
+    plt.savefig(save_path)
+    print(f"Plot saved to {save_path}")
+
+    plt.show()
 
 
 def plot_final_comparison(results, stock_symbol):
     """Creates a comparison plot for all models."""
-    fig, ax = plt.subplots(figsize=(15, 8))  # --- Create a figure and axes object ---
+    plt.figure(figsize=(15, 8))
 
     # Plot actual values first
     actual_data = results.get('Actual')
     if actual_data:
-        ax.plot(actual_data['dates'], actual_data['values'], label='Actual Price', color='black', linewidth=2.5)
+        plt.plot(actual_data['dates'], actual_data['values'], label='Actual Price', color='black', linewidth=2.5)
 
     # Plot model predictions
     colors = {
         'Baseline LSTM': 'blue',
         'Multi-Layer LSTM': 'green',
         'Enhanced LSTM': 'red',
-        'Multi-Layer Enhanced LSTM': 'purple'
+        'Multi-Layer Enhanced LSTM': 'purple'  # Added new color
     }
     for name, data in results.items():
         if name != 'Actual':
-            ax.plot(data['dates'], data['values'], label=name, color=colors.get(name, 'gray'), alpha=0.8)
+            plt.plot(data['dates'], data['values'], label=name, color=colors.get(name, 'gray'), alpha=0.8)
 
-    ax.set_title(f'{stock_symbol} All Model Predictions Comparison', fontsize=16)
-    ax.set_ylabel('Price ($)')
-    ax.legend()
-    ax.grid(True, alpha=0.3)
+    plt.title(f'{stock_symbol} All Model Predictions Comparison', fontsize=16)
+    plt.ylabel('Price ($)')
+    plt.legend()
+    plt.grid(True, alpha=0.3)
 
-    return fig  # --- Return the figure object ---
+    # Save the plot
+    save_path = os.path.join(cfg.OUTPUT_DIR, f"{stock_symbol}_all_models_comparison.png")  # <-- Use cfg.OUTPUT_DIR here
+    plt.savefig(save_path)
+    print(f"Plot saved to {save_path}")
+
+    plt.show()

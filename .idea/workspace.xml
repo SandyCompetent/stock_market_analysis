@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update configuration and model functions for improved LSTM analysis and output management">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update sentiment analysis configuration and model parameters for enhanced performance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment_analysis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -459,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753452358002</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="feat: update sentiment analysis configuration and model parameters for enhanced performance">
+      <option name="closed" value="true" />
+      <created>1753454618722</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1753454618722</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +520,8 @@
     <MESSAGE value="feat: add configuration and data processing modules for stock price prediction with sentiment analysis" />
     <MESSAGE value="feat: add .gitignore file to exclude unnecessary files and directories" />
     <MESSAGE value="feat: update configuration and model functions for improved LSTM analysis and output management" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update configuration and model functions for improved LSTM analysis and output management" />
+    <MESSAGE value="feat: update sentiment analysis configuration and model parameters for enhanced performance" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update sentiment analysis configuration and model parameters for enhanced performance" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

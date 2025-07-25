@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="style: standardize string quotes and improve code formatting across multiple files">
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,14 +151,6 @@
       <workItem from="1753383734931" duration="1349000" />
       <workItem from="1753385425458" duration="12690000" />
       <workItem from="1753447422386" duration="2073000" />
-    </task>
-    <task id="LOCAL-00001" summary="refactor: remove redundant code and streamline stock market data extraction logic in notebook">
-      <option name="closed" value="true" />
-      <created>1751742797868</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1751742797868</updated>
     </task>
     <task id="LOCAL-00002" summary="feat: Trying new logic">
       <option name="closed" value="true" />
@@ -537,7 +528,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753459017365</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="feat: enhance plotting functions in utils.py to save figures and improve visualization">
+      <option name="closed" value="true" />
+      <created>1753459326296</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1753459326296</updated>
+    </task>
+    <task id="LOCAL-00050" summary="style: standardize string quotes and improve code formatting across multiple files">
+      <option name="closed" value="true" />
+      <created>1753459392746</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1753459392746</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -567,8 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add LSTM analysis HTML for USA stock market" />
-    <MESSAGE value="refactor: rename, streamline, and reduce content in stock market news analysis notebook" />
     <MESSAGE value="chore: delete analysis_using_lstm.html file to clean up unused resources" />
     <MESSAGE value="feat: add stock data downloader and LSTM-based sentiment analysis notebooks" />
     <MESSAGE value="refactor: streamline `analysis_using_lstm.ipynb` by reducing content and simplifying structure" />
@@ -592,7 +597,9 @@
     <MESSAGE value="remove: requirements.txt" />
     <MESSAGE value="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction" />
     <MESSAGE value="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration" />
+    <MESSAGE value="feat: enhance plotting functions in utils.py to save figures and improve visualization" />
+    <MESSAGE value="style: standardize string quotes and improve code formatting across multiple files" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: standardize string quotes and improve code formatting across multiple files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

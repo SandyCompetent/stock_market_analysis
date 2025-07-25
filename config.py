@@ -1,0 +1,20 @@
+# Analysis Configuration
+STOCK_SYMBOL = 'NVDA'  # Target stock symbol
+NEWS_DATA_FILE = 'Dataset/news_data.csv'  # Path to your news data
+
+# Model Parameters
+SEQUENCE_LENGTH = 30  # Number of days to look back for prediction
+TEST_SIZE = 0.2  # Proportion of data for testing
+EPOCHS = 10  # Number of training epochs
+BATCH_SIZE = 32  # Batch size for training
+
+# Feature Lists
+BASELINE_FEATURES = ['Close', 'SMA_7', 'RSI', 'Volume', 'HL_Spread', 'Price_Change_Pct']
+BASELINE_TARGET = 'Price_Change_Pct'
+
+ENHANCED_FEATURES = [
+    'Close', 'SMA_7', 'RSI', 'Volume', 'HL_Spread', 'Price_Change_Pct',
+    'Avg_Sentiment', 'Sentiment_Ratio', 'News_Count'
+]
+
+ENHANCED_TARGET = 'Price_Change_Pct'

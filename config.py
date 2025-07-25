@@ -13,20 +13,28 @@ TEST_SIZE = 0.2  # Proportion of data for testing
 EPOCHS = 20  # Number of training epochs
 BATCH_SIZE = 32  # Batch size for training
 
-# Feature Lists
-BASELINE_FEATURES = ["Close", "SMA_7", "RSI", "Volume", "HL_Spread", "Price_Change_Pct"]
-BASELINE_TARGET = "Price_Change_Pct"
+BASELINE_FEATURES = [
+    "Close",
+    "SMA_50",
+    "RSI",
+    "MACD_line",
+    "BB_width",
+    "OBV",
+    "Volume"
+]
+
+BASELINE_TARGET = "Close"
 
 ENHANCED_FEATURES = [
     "Close",
-    "SMA_7",
+    "SMA_50",
     "RSI",
+    "MACD_line",
+    "BB_width",
+    "OBV",
     "Volume",
-    "HL_Spread",
-    "Price_Change_Pct",
     "Avg_Sentiment",
     "Sentiment_Ratio",
     "News_Count",
 ]
-
-ENHANCED_TARGET = "Price_Change_Pct"
+ENHANCED_TARGET = "Close"

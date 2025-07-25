@@ -1,12 +1,12 @@
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout
+from tensorflow.keras.layers import LSTM, Dense, Dropout, GRU
 from tensorflow.keras.optimizers import Adam
 
 
 def prepare_data_for_lstm(
-    data, feature_columns, target_column, sequence_length, test_size
+        data, feature_columns, target_column, sequence_length, test_size
 ):
     """A unified function to prepare data for LSTM models."""
     if target_column not in feature_columns:
@@ -24,13 +24,13 @@ def prepare_data_for_lstm(
 
     X_train, y_train = [], []
     for i in range(sequence_length, len(train_scaled)):
-        X_train.append(train_scaled[i - sequence_length : i, :])
+        X_train.append(train_scaled[i - sequence_length: i, :])
         y_train.append(train_scaled[i, target_idx])
 
     inputs = np.concatenate((train_scaled[-sequence_length:], test_scaled), axis=0)
     X_test, y_test = [], []
     for i in range(sequence_length, len(inputs)):
-        X_test.append(inputs[i - sequence_length : i, :])
+        X_test.append(inputs[i - sequence_length: i, :])
         y_test.append(inputs[i, target_idx])
 
     return (
@@ -68,4 +68,20 @@ def build_multi_layer_lstm(input_shape):
         ]
     )
     model.compile(optimizer=Adam(learning_rate=0.001), loss="mean_squared_error")
+    return model
+
+
+def build_gru(input_shape, units=50, dropout_rate=0.2):
+    """
+    Creates a GRU model.
+    """
+    model = Sequential([
+        GRU(units, return_sequences=True, input_shape=input_shape),
+        Dropout(dropout_rate),
+        GRU(units, return_sequences=False),
+        Dropout(dropout_rate),
+        Dense(25),
+        Dense(1)
+    ])
+    model.compile(optimizer='adam', loss='mean_squared_error')
     return model

@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import mean_squared_error, mean_absolute_error
+import config as cfg
+import os
 
 
 def save_dataframe(df: pd.DataFrame, file_path: str):
@@ -39,10 +41,10 @@ def calculate_metrics(actual, predicted, model_name):
     }
 
 
-def plot_baseline_results(history, y_test, predictions, test_dates, stock_symbol):
-    """Visualizes the results for the baseline model."""
+def plot_model_results(history, y_test, predictions, test_dates, stock_symbol, model_name):
+    """A generic function to visualize the results for any model."""
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))
-    fig.suptitle(f'{stock_symbol} Baseline LSTM Analysis', fontsize=16, fontweight='bold')
+    fig.suptitle(f'{stock_symbol} - {model_name} Analysis', fontsize=16, fontweight='bold')
 
     # Training history
     axes[0].plot(history.history['loss'], label='Training Loss')
@@ -52,50 +54,49 @@ def plot_baseline_results(history, y_test, predictions, test_dates, stock_symbol
 
     # Predictions vs Actual
     axes[1].plot(test_dates, y_test, label='Actual Price', color='black')
-    axes[1].plot(test_dates, predictions, label='LSTM Prediction', color='red')
+    axes[1].plot(test_dates, predictions, label=f'{model_name} Prediction', color='red')
     axes[1].set_title('Predictions vs Actual Price')
     axes[1].legend()
 
     plt.tight_layout()
+
+    safe_model_name = model_name.replace(" ", "_").replace("(", "").replace(")", "")
+    save_path = os.path.join(cfg.OUTPUT_DIR,
+                             f"{stock_symbol}_{safe_model_name}_analysis.png")  # <-- Use cfg.OUTPUT_DIR here
+    plt.savefig(save_path)
+    print(f"Plot saved to {save_path}")
+
     plt.show()
 
 
-def plot_enhanced_results(history, y_test, predictions, test_dates, stock_symbol):
-    """Visualizes the results for the sentiment-enhanced model."""
-    fig, axes = plt.subplots(1, 2, figsize=(18, 6))
-    fig.suptitle(f'{stock_symbol} Sentiment-Enhanced LSTM Analysis', fontsize=16, fontweight='bold')
+def plot_final_comparison(results, stock_symbol):
+    """Creates a comparison plot for all models."""
+    plt.figure(figsize=(15, 8))
 
-    # 1. Training history
-    axes[0].plot(history.history['loss'], label='Training Loss', color='red')
-    axes[0].plot(history.history['val_loss'], label='Validation Loss', color='orange')
-    axes[0].set_title('Enhanced Model Loss During Training')
-    axes[0].set_xlabel('Epoch')
-    axes[0].set_ylabel('Loss (MSE)')
-    axes[0].legend()
-    axes[0].grid(True, alpha=0.3)
+    # Plot actual values first
+    actual_data = results.get('Actual')
+    if actual_data:
+        plt.plot(actual_data['dates'], actual_data['values'], label='Actual Price', color='black', linewidth=2.5)
 
-    # 2. Predictions vs Actual
-    axes[1].plot(test_dates, y_test, label='Actual Price', color='black', linewidth=2)
-    axes[1].plot(test_dates, predictions, label='Enhanced LSTM Prediction', color='red', alpha=0.8)
-    axes[1].set_title('Enhanced Model Predictions vs Actual Price')
-    axes[1].set_ylabel('Price ($)')
-    axes[1].legend()
-    axes[1].grid(True, alpha=0.3)
-    axes[1].tick_params(axis='x', rotation=45)
+    # Plot model predictions
+    colors = {
+        'Baseline LSTM': 'blue',
+        'Multi-Layer LSTM': 'green',
+        'Enhanced LSTM': 'red',
+        'Multi-Layer Enhanced LSTM': 'purple'  # Added new color
+    }
+    for name, data in results.items():
+        if name != 'Actual':
+            plt.plot(data['dates'], data['values'], label=name, color=colors.get(name, 'gray'), alpha=0.8)
 
-    plt.tight_layout()
-    plt.show()
-
-
-def plot_comparison_results(y_test_base, base_preds, y_test_enh, enh_preds, test_dates_base, test_dates_enh,
-                            stock_symbol):
-    """Creates a comprehensive visualization comparing both models."""
-    plt.figure(figsize=(14, 7))
-    plt.plot(test_dates_base, y_test_base, label='Actual Price', color='black', linewidth=2)
-    plt.plot(test_dates_base, base_preds, label='Baseline LSTM', color='blue', alpha=0.8)
-    plt.plot(test_dates_enh, enh_preds, label='Enhanced LSTM', color='red', alpha=0.8)
-    plt.title(f'{stock_symbol} LSTM Models Comparison: Baseline vs Sentiment-Enhanced', fontsize=16)
+    plt.title(f'{stock_symbol} All Model Predictions Comparison', fontsize=16)
     plt.ylabel('Price ($)')
     plt.legend()
     plt.grid(True, alpha=0.3)
+
+    # Save the plot
+    save_path = os.path.join(cfg.OUTPUT_DIR, f"{stock_symbol}_all_models_comparison.png")  # <-- Use cfg.OUTPUT_DIR here
+    plt.savefig(save_path)
+    print(f"Plot saved to {save_path}")
+
     plt.show()

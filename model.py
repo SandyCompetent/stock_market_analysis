@@ -1,5 +1,3 @@
-# model.py
-
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
@@ -36,16 +34,26 @@ def prepare_data_for_lstm(data, feature_columns, target_column, sequence_length,
     return np.array(X_train), np.array(X_test), np.array(y_train), np.array(y_test), scaler
 
 
-def build_lstm_model(input_shape):
+def build_single_layer_lstm(input_shape):
     """Builds a single-layer LSTM model."""
     model = Sequential([
-        LSTM(units=64, input_shape=input_shape),
+        LSTM(units=128, input_shape=input_shape),
         Dropout(0.2),
         Dense(units=1, activation='linear')
     ])
-    model.compile(
-        optimizer=Adam(learning_rate=0.001),
-        loss='mean_squared_error',
-        metrics=['mae']
-    )
+    model.compile(optimizer=Adam(learning_rate=0.001), loss='mean_squared_error')
+    return model
+
+
+def build_multi_layer_lstm(input_shape):
+    """Builds a stacked, multi-layer LSTM model."""
+    model = Sequential([
+        LSTM(units=128, return_sequences=True, input_shape=input_shape),
+        Dropout(0.2),
+        LSTM(units=64, return_sequences=False),
+        Dropout(0.2),
+        Dense(units=25),
+        Dense(units=1, activation='linear')
+    ])
+    model.compile(optimizer=Adam(learning_rate=0.001), loss='mean_squared_error')
     return model

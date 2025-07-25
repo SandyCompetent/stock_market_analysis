@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: add initial configuration files and LSTM analysis notebook for stock price forecasting">
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentiment_analysis.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: add .gitignore file to exclude unnecessary files and directories">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,25 +58,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.test.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "develop",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/sandy/PycharmProjects/stock_market_analysis",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sandy/PycharmProjects/stock_market_analysis&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -158,7 +155,7 @@
       <workItem from="1753380606217" duration="1108000" />
       <workItem from="1753383734931" duration="1349000" />
       <workItem from="1753385425458" duration="12690000" />
-      <workItem from="1753447422386" duration="1760000" />
+      <workItem from="1753447422386" duration="2073000" />
     </task>
     <task id="LOCAL-00001" summary="refactor: remove redundant code and streamline stock market data extraction logic in notebook">
       <option name="closed" value="true" />
@@ -440,7 +437,23 @@
       <option name="project" value="LOCAL" />
       <updated>1753447922477</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="feat: add configuration and data processing modules for stock price prediction with sentiment analysis">
+      <option name="closed" value="true" />
+      <created>1753449487786</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1753449487786</updated>
+    </task>
+    <task id="LOCAL-00037" summary="feat: add .gitignore file to exclude unnecessary files and directories">
+      <option name="closed" value="true" />
+      <created>1753450231661</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1753450231661</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +504,9 @@
     <MESSAGE value="feat: add initial configuration and trial data files for hyperparameter tuning" />
     <MESSAGE value="refactor: Code" />
     <MESSAGE value="feat: add initial configuration files and LSTM analysis notebook for stock price forecasting" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add initial configuration files and LSTM analysis notebook for stock price forecasting" />
+    <MESSAGE value="feat: add configuration and data processing modules for stock price prediction with sentiment analysis" />
+    <MESSAGE value="feat: add .gitignore file to exclude unnecessary files and directories" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add .gitignore file to exclude unnecessary files and directories" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

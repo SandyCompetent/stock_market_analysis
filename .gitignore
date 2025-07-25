@@ -162,6 +162,7 @@ cython_debug/
 
 # Data & Datasets
 /Dataset/
+/Output/
 *.csv
 *.png
 

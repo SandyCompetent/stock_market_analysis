@@ -1,6 +1,9 @@
 # Analysis Configuration
 STOCK_SYMBOL = 'NVDA'  # Target stock symbol
-NEWS_DATA_FILE = 'Dataset/news_data.csv'  # Path to your news data
+DATASET_DIR = "Dataset"
+OUTPUT_DIR = "Output"
+NEWS_DATA_FILE = f"{DATASET_DIR}/news_data.csv"  # Path to your news data
+UPDATE_SENTIMENT_CSV = False  # Set to True to force re-generation of sentiment data
 
 # Model Parameters
 SEQUENCE_LENGTH = 30  # Number of days to look back for prediction

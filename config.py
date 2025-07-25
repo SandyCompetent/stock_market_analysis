@@ -1,5 +1,5 @@
 # Analysis Configuration
-STOCK_SYMBOL = 'NVDA'  # Target stock symbol
+STOCK_SYMBOL = "NVDA"  # Target stock symbol
 DATASET_DIR = "Dataset"
 OUTPUT_DIR = "Output"
 NEWS_DATA_FILE = f"{DATASET_DIR}/news_data.csv"  # Path to your news data
@@ -14,12 +14,19 @@ EPOCHS = 20  # Number of training epochs
 BATCH_SIZE = 32  # Batch size for training
 
 # Feature Lists
-BASELINE_FEATURES = ['Close', 'SMA_7', 'RSI', 'Volume', 'HL_Spread', 'Price_Change_Pct']
-BASELINE_TARGET = 'Price_Change_Pct'
+BASELINE_FEATURES = ["Close", "SMA_7", "RSI", "Volume", "HL_Spread", "Price_Change_Pct"]
+BASELINE_TARGET = "Price_Change_Pct"
 
 ENHANCED_FEATURES = [
-    'Close', 'SMA_7', 'RSI', 'Volume', 'HL_Spread', 'Price_Change_Pct',
-    'Avg_Sentiment', 'Sentiment_Ratio', 'News_Count'
+    "Close",
+    "SMA_7",
+    "RSI",
+    "Volume",
+    "HL_Spread",
+    "Price_Change_Pct",
+    "Avg_Sentiment",
+    "Sentiment_Ratio",
+    "News_Count",
 ]
 
-ENHANCED_TARGET = 'Price_Change_Pct'
+ENHANCED_TARGET = "Price_Change_Pct"

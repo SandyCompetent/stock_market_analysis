@@ -21,7 +21,7 @@ def calculate_dynamic_date_range(daily_sentiment_df):
     earliest_news_date = pd.to_datetime(daily_sentiment_df.index.min())
     latest_news_date = pd.to_datetime(daily_sentiment_df.index.max())
     start_date = earliest_news_date - pd.DateOffset(years=1)
-    return start_date.strftime('%Y-%m-%d'), latest_news_date.strftime('%Y-%m-%d')
+    return start_date.strftime("%Y-%m-%d"), latest_news_date.strftime("%Y-%m-%d")
 
 
 def calculate_metrics(actual, predicted, model_name):
@@ -34,35 +34,40 @@ def calculate_metrics(actual, predicted, model_name):
     directional_accuracy = np.mean(actual_direction == predicted_direction) * 100
 
     return {
-        'Model': model_name,
-        'RMSE': rmse,
-        'MAE': mae,
-        'Directional_Accuracy': directional_accuracy
+        "Model": model_name,
+        "RMSE": rmse,
+        "MAE": mae,
+        "Directional_Accuracy": directional_accuracy,
     }
 
 
-def plot_model_results(history, y_test, predictions, test_dates, stock_symbol, model_name):
+def plot_model_results(
+    history, y_test, predictions, test_dates, stock_symbol, model_name
+):
     """A generic function to visualize the results for any model."""
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))
-    fig.suptitle(f'{stock_symbol} - {model_name} Analysis', fontsize=16, fontweight='bold')
+    fig.suptitle(
+        f"{stock_symbol} - {model_name} Analysis", fontsize=16, fontweight="bold"
+    )
 
     # Training history
-    axes[0].plot(history.history['loss'], label='Training Loss')
-    axes[0].plot(history.history['val_loss'], label='Validation Loss')
-    axes[0].set_title('Model Loss During Training')
+    axes[0].plot(history.history["loss"], label="Training Loss")
+    axes[0].plot(history.history["val_loss"], label="Validation Loss")
+    axes[0].set_title("Model Loss During Training")
     axes[0].legend()
 
     # Predictions vs Actual
-    axes[1].plot(test_dates, y_test, label='Actual Price', color='black')
-    axes[1].plot(test_dates, predictions, label=f'{model_name} Prediction', color='red')
-    axes[1].set_title('Predictions vs Actual Price')
+    axes[1].plot(test_dates, y_test, label="Actual Price", color="black")
+    axes[1].plot(test_dates, predictions, label=f"{model_name} Prediction", color="red")
+    axes[1].set_title("Predictions vs Actual Price")
     axes[1].legend()
 
     plt.tight_layout()
 
     safe_model_name = model_name.replace(" ", "_").replace("(", "").replace(")", "")
-    save_path = os.path.join(cfg.OUTPUT_DIR,
-                             f"{stock_symbol}_{safe_model_name}_analysis.png")  # <-- Use cfg.OUTPUT_DIR here
+    save_path = os.path.join(
+        cfg.OUTPUT_DIR, f"{stock_symbol}_{safe_model_name}_analysis.png"
+    )  # <-- Use cfg.OUTPUT_DIR here
     plt.savefig(save_path)
     print(f"Plot saved to {save_path}")
 
@@ -74,28 +79,42 @@ def plot_final_comparison(results, stock_symbol):
     plt.figure(figsize=(15, 8))
 
     # Plot actual values first
-    actual_data = results.get('Actual')
+    actual_data = results.get("Actual")
     if actual_data:
-        plt.plot(actual_data['dates'], actual_data['values'], label='Actual Price', color='black', linewidth=2.5)
+        plt.plot(
+            actual_data["dates"],
+            actual_data["values"],
+            label="Actual Price",
+            color="black",
+            linewidth=2.5,
+        )
 
     # Plot model predictions
     colors = {
-        'Baseline LSTM': 'blue',
-        'Multi-Layer LSTM': 'green',
-        'Enhanced LSTM': 'red',
-        'Multi-Layer Enhanced LSTM': 'purple'  # Added new color
+        "Baseline LSTM": "blue",
+        "Multi-Layer LSTM": "green",
+        "Enhanced LSTM": "red",
+        "Multi-Layer Enhanced LSTM": "purple",  # Added new color
     }
     for name, data in results.items():
-        if name != 'Actual':
-            plt.plot(data['dates'], data['values'], label=name, color=colors.get(name, 'gray'), alpha=0.8)
+        if name != "Actual":
+            plt.plot(
+                data["dates"],
+                data["values"],
+                label=name,
+                color=colors.get(name, "gray"),
+                alpha=0.8,
+            )
 
-    plt.title(f'{stock_symbol} All Model Predictions Comparison', fontsize=16)
-    plt.ylabel('Price ($)')
+    plt.title(f"{stock_symbol} All Model Predictions Comparison", fontsize=16)
+    plt.ylabel("Price ($)")
     plt.legend()
     plt.grid(True, alpha=0.3)
 
     # Save the plot
-    save_path = os.path.join(cfg.OUTPUT_DIR, f"{stock_symbol}_all_models_comparison.png")  # <-- Use cfg.OUTPUT_DIR here
+    save_path = os.path.join(
+        cfg.OUTPUT_DIR, f"{stock_symbol}_all_models_comparison.png"
+    )  # <-- Use cfg.OUTPUT_DIR here
     plt.savefig(save_path)
     print(f"Plot saved to {save_path}")
 

@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="style: update workspace.xml to standardize task summaries and improve formatting">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update feature lists and enhance technical indicators in data processing">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025,_20_57_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025__20_57__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/streamlit_app.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,15 +158,8 @@
       <workItem from="1753383734931" duration="1349000" />
       <workItem from="1753385425458" duration="12690000" />
       <workItem from="1753447422386" duration="2073000" />
-      <workItem from="1753467165832" duration="1177000" />
-    </task>
-    <task id="LOCAL-00002" summary="feat: Trying new logic">
-      <option name="closed" value="true" />
-      <created>1752279588649</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1752279588649</updated>
+      <workItem from="1753467165832" duration="1794000" />
+      <workItem from="1753732966393" duration="3982000" />
     </task>
     <task id="LOCAL-00003" summary="Update gitignore">
       <option name="closed" value="true" />
@@ -549,7 +545,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753459392746</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="feat: update feature lists and enhance technical indicators in data processing">
+      <option name="closed" value="true" />
+      <created>1753485864927</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1753485864927</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: delete analysis_using_lstm.html file to clean up unused resources" />
     <MESSAGE value="feat: add stock data downloader and LSTM-based sentiment analysis notebooks" />
     <MESSAGE value="refactor: streamline `analysis_using_lstm.ipynb` by reducing content and simplifying structure" />
     <MESSAGE value="chore: delete `analysis_using_lstm.ipynb` to remove unused notebook" />
@@ -604,7 +607,8 @@
     <MESSAGE value="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration" />
     <MESSAGE value="feat: enhance plotting functions in utils.py to save figures and improve visualization" />
     <MESSAGE value="style: standardize string quotes and improve code formatting across multiple files" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: standardize string quotes and improve code formatting across multiple files" />
+    <MESSAGE value="feat: update feature lists and enhance technical indicators in data processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update feature lists and enhance technical indicators in data processing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

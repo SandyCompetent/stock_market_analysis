@@ -159,13 +159,10 @@ def create_enhanced_dataset(stock_data_with_indicators, daily_sentiment_df):
 
     merged_data = enhanced_stock_data.join(daily_sentiment_df, how="left")
 
-    sentiment_cols = ["Avg_Sentiment", "Total_Sentiment", "News_Count"]
+    sentiment_cols = [
+        "Avg_Sentiment", "Total_Sentiment", "Positive_Count",
+        "Negative_Count", "Neutral_Count", "News_Count"
+    ]
     merged_data[sentiment_cols] = merged_data[sentiment_cols].fillna(0)
-
-    # Simple sentiment ratio for modeling
-    merged_data["Sentiment_Ratio"] = (
-            merged_data["Avg_Sentiment"] * merged_data["News_Count"]
-    ).fillna(0)
-
     print(f"Enhanced dataset shape: {merged_data.shape}")
     return merged_data

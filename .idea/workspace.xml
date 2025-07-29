@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="delete: tuner_result">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="chore: add tuner_results to .gitignore to prevent tracking of output files">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sentiment_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,15 +165,7 @@
       <workItem from="1753790966664" duration="8317000" />
       <workItem from="1753809882835" duration="259000" />
       <workItem from="1753810331243" duration="113000" />
-      <workItem from="1753810457801" duration="2877000" />
-    </task>
-    <task id="LOCAL-00010" summary="feat: New Logic">
-      <option name="closed" value="true" />
-      <created>1752280458172</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1752280458172</updated>
+      <workItem from="1753810457801" duration="7357000" />
     </task>
     <task id="LOCAL-00011" summary="feat: New Logic">
       <option name="closed" value="true" />
@@ -554,7 +551,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753814180299</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="chore: add tuner_results to .gitignore to prevent tracking of output files">
+      <option name="closed" value="true" />
+      <created>1753814232760</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1753814232760</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: streamline `analysis_using_lstm.ipynb` by consolidating sections, removing redundancy, and enhancing structure for improved clarity" />
     <MESSAGE value="feat: add initial configuration and trial data files for hyperparameter tuning" />
     <MESSAGE value="refactor: Code" />
     <MESSAGE value="feat: add initial configuration files and LSTM analysis notebook for stock price forecasting" />
@@ -609,7 +613,8 @@
     <MESSAGE value="feat: add initial configuration and trial data for hyperparameter tuning" />
     <MESSAGE value="feat: update input shape in build configuration for improved model performance" />
     <MESSAGE value="delete: tuner_result" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete: tuner_result" />
+    <MESSAGE value="chore: add tuner_results to .gitignore to prevent tracking of output files" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: add tuner_results to .gitignore to prevent tracking of output files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

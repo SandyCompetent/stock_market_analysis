@@ -3,10 +3,42 @@ import numpy as np
 import matplotlib.pyplot as plt
 import config as cfg
 import os
+import datetime
 
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.inspection import permutation_importance
 from sklearn.base import BaseEstimator, RegressorMixin
+
+
+def format_runtime(total_seconds):
+    """Formats seconds into a human-readable string (D H M S)."""
+    # Create a timedelta object
+    td = datetime.timedelta(seconds=total_seconds)
+
+    # Extract days, and the remaining seconds
+    days = td.days
+    remaining_seconds = td.seconds
+
+    # Calculate hours, minutes, and seconds from the remainder
+    hours, rem = divmod(remaining_seconds, 3600)
+    minutes, seconds = divmod(rem, 60)
+
+    # Add microseconds for fractional second precision
+    seconds += td.microseconds / 1_000_000
+
+    # Build the output string
+    parts = []
+    if days > 0:
+        parts.append(f"{days} day{'s' if days != 1 else ''}")
+    if hours > 0:
+        parts.append(f"{hours} hour{'s' if hours != 1 else ''}")
+    if minutes > 0:
+        parts.append(f"{minutes} minute{'s' if minutes != 1 else ''}")
+    if seconds > 0 or not parts:  # Always show seconds if it's the only unit
+        parts.append(f"{seconds:.2f} seconds")
+
+    return " ".join(parts)
+
 
 def save_dataframe(df: pd.DataFrame, file_path: str):
     try:
@@ -162,7 +194,7 @@ def plot_final_comparison(results, stock_symbol, title):
             )
 
     plt.title(title, fontsize=16)
-    plt.ylabel("Price ($)")
+    plt.ylabel("Daily Return")
     plt.legend()
     plt.grid(True, alpha=0.3)
 
@@ -194,7 +226,7 @@ def plot_residuals(y_test, predictions, test_dates, stock_symbol, model_name):
 
     plt.title(f"{stock_symbol} - {model_name} Prediction Residuals", fontsize=16)
     plt.xlabel("Date")
-    plt.ylabel("Prediction Error ($)")
+    plt.ylabel("Prediction Error (Return)")
     plt.legend()
     plt.grid(True, alpha=0.3)
 

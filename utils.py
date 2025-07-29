@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import config as cfg
 import os
 
-from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.inspection import permutation_importance
 from sklearn.base import BaseEstimator, RegressorMixin
 
@@ -26,20 +26,42 @@ def calculate_dynamic_date_range(daily_sentiment_df):
     return start_date.strftime("%Y-%m-%d"), latest_news_date.strftime("%Y-%m-%d")
 
 
-def calculate_metrics(actual, predicted, model_name):
+def calculate_metrics(actual, predicted, model_name, train_actual):
     """Calculate comprehensive performance metrics."""
+
+    # Ensure inputs are numpy arrays for calculations
+    actual = np.asarray(actual).flatten()
+    predicted = np.asarray(predicted).flatten()
+    train_actual = np.asarray(train_actual).flatten()
+
     mse = mean_squared_error(actual, predicted)
     rmse = np.sqrt(mse)
     mae = mean_absolute_error(actual, predicted)
+
+    # Mean Absolute Percentage Error (MAPE) calculation (adding a small epsilon to avoid division by zero)
+    mape = np.mean(np.abs((actual - predicted) / (actual + 1e-8))) * 100
+
+    # R-squared calculation
+    r2 = r2_score(actual, predicted)
+
+    # Directional accuracy
     actual_direction = np.diff(actual.flatten()) > 0
     predicted_direction = np.diff(predicted.flatten()) > 0
     directional_accuracy = np.mean(actual_direction == predicted_direction) * 100
+
+    # Mean Absolute Scaled Error (MASE) calculation
+    # The denominator is the MAE of the naive forecast on the training set
+    mae_naive_train = np.mean(np.abs(np.diff(train_actual)))
+    mase = mae / (mae_naive_train + 1e-8)  # add epsilon to avoid division by zero
 
     return {
         "Model": model_name,
         "RMSE": rmse,
         "MAE": mae,
+        "MAPE (%)": mape,
+        "R-squared": r2,
         "Directional_Accuracy": directional_accuracy,
+        "MASE": mase
     }
 
 
@@ -101,7 +123,7 @@ def plot_non_keras_results(y_test, predictions, test_dates, stock_symbol, model_
     plt.show()
 
 
-def plot_final_comparison(results, stock_symbol):
+def plot_final_comparison(results, stock_symbol, title):
     """Creates a comparison plot for all models."""
     plt.figure(figsize=(15, 8))
 
@@ -118,11 +140,14 @@ def plot_final_comparison(results, stock_symbol):
 
     # Plot model predictions
     colors = {
-        "Baseline LSTM": "blue",
+        "Actual": "black",
+        "Single-Layer LSTM": "blue",
         "Multi-Layer LSTM": "green",
         "Enhanced LSTM": "red",
         "Multi-Layer Enhanced LSTM": "purple",
-        "Baseline SVM": "orange",
+        "Baseline GRU": "brown",
+        "Enhanced GRU": "pink",
+        "SVM": "orange",
         "Enhanced SVM": "cyan",
         "ARIMA": "magenta",
     }
@@ -136,7 +161,7 @@ def plot_final_comparison(results, stock_symbol):
                 alpha=0.8,
             )
 
-    plt.title(f"{stock_symbol} All Model Predictions Comparison", fontsize=16)
+    plt.title(title, fontsize=16)
     plt.ylabel("Price ($)")
     plt.legend()
     plt.grid(True, alpha=0.3)

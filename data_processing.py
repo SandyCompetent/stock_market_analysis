@@ -137,6 +137,11 @@ def calculate_technical_indicators(data):
     # 10. Rate of Change (ROC) - for momentum
     df["ROC"] = df["Close"].pct_change(periods=14) * 100
 
+    # 11. Lagged Features (as per your request)
+    df["Close_diff_1"] = df["Close"].diff(1)
+    df["Close_diff_2"] = df["Close"].diff(2)
+    df["Close_diff_5"] = df["Close"].diff(5)
+
     # Drop rows with NaN values created by rolling windows
     df = df.dropna()
 

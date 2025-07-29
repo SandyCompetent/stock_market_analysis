@@ -24,6 +24,9 @@ BASELINE_FEATURES = [
     "ATR",
     "CMF",
     "ROC",
+    "Close_diff_1",
+    "Close_diff_2",
+    "Close_diff_5"
 ]
 
 BASELINE_TARGET = "Close"
@@ -39,8 +42,12 @@ ENHANCED_FEATURES = [
     "ATR",
     "CMF",
     "ROC",
+    "Close_diff_1",
+    "Close_diff_2",
+    "Close_diff_5",
     "Avg_Sentiment",
     "Sentiment_Ratio",
     "News_Count",
+
 ]
 ENHANCED_TARGET = "Close"

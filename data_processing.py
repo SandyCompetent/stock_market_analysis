@@ -1,21 +1,51 @@
 import pandas as pd
 import yfinance as yf
 import numpy as np
+import os
 
 
 def load_and_analyze_news_data(file_path, target_symbol):
     print("Loading and selecting news data...")
-    df = pd.read_csv(file_path)
-    df["Date"] = pd.to_datetime(df["date"], format="mixed", utc=True, errors="coerce")
-    df = df.dropna(subset=["Date"])
+    print(f"File path: {file_path}")
 
-    if target_symbol in df["stock"].unique():
-        article_count = df[df["stock"] == target_symbol].shape[0]
-        print(f"🎯 Selected target stock: {target_symbol} ({article_count} articles)")
+    # Check 1: See if the file exists and is not empty
+    if not os.path.exists(file_path) or os.path.getsize(file_path) == 0:
+        print(f"Warning: File is empty or does not exist: {file_path}")
+        # Return an empty DataFrame with expected columns to avoid downstream errors
+        return pd.DataFrame(
+            columns=["date", "headline", "symbol"]
+        )  # Adjust columns as needed
+
+    # Check 2: Use a try-except block for safety
+    try:
+        df = pd.read_csv(file_path)
+        if df.empty:
+            print(f"Warning: CSV file is empty (contains no data rows): {file_path}")
+            return df  # Return the empty dataframe
+
+        print(f"Loaded {df.shape[0]} articles from {file_path}")
+        # ... continue with your existing logic ...
         return df
-    else:
-        print(f"⚠️ ERROR: Target stock '{target_symbol}' not found.")
-        return None
+
+    except pd.errors.EmptyDataError:
+        print(f"Warning: Pandas EmptyDataError for file: {file_path}")
+        # Return an empty DataFrame here as well
+        return pd.DataFrame(columns=["date", "headline", "symbol"])
+
+    print("Loading and selecting news data...")
+    print(f"File path: {file_path}")
+    df = pd.read_csv(file_path)
+    print(f"Loaded {df.shape[0]} articles from {file_path}")
+    # df["Date"] = pd.to_datetime(df["date"], format="mixed", utc=True, errors="coerce")
+    # df = df.dropna(subset=["Date"])
+    #
+    # if target_symbol in df["stock"].unique():
+    #     article_count = df[df["stock"] == target_symbol].shape[0]
+    #     print(f"🎯 Selected target stock: {target_symbol} ({article_count} articles)")
+    #     return df
+    # else:
+    #     print(f"⚠️ ERROR: Target stock '{target_symbol}' not found.")
+    #     return None
 
 
 def fetch_stock_data(ticker, start_date, end_date):

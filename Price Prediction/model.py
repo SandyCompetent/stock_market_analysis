@@ -3,8 +3,6 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout, GRU
 from tensorflow.keras.optimizers import Adam
-from sklearn.svm import SVR
-from statsmodels.tsa.arima.model import ARIMA
 
 
 def prepare_data_for_lstm(
@@ -89,25 +87,3 @@ def build_gru(input_shape, units=50, dropout_rate=0.2):
     )
     model.compile(optimizer="adam", loss="mean_squared_error")
     return model
-
-
-def build_and_train_svm(X_train, y_train):
-    """Builds and trains a Support Vector Machine for regression."""
-    print("Building and training SVM model...")
-    # SVR with a radial basis function kernel is a good starting point
-    svm_model = SVR(kernel="rbf", C=100, gamma=0.1, epsilon=0.1)
-    svm_model.fit(X_train, y_train)
-    print("SVM training complete.")
-    return svm_model
-
-
-def build_and_train_arima(train_data):
-    """Builds and trains a simple ARIMA model."""
-    print("Building and training ARIMA model...")
-    # Note: The order (p,d,q) is a critical hyperparameter.
-    # (5,1,0) is a common starting point for stock prices.
-    # For a real project, this should be determined with PACF/ACF plots or auto_arima.
-    arima_model = ARIMA(train_data, order=(5, 1, 0))
-    fitted_model = arima_model.fit()
-    print("ARIMA training complete.")
-    return fitted_model

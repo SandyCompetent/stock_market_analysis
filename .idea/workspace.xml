@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="style: standardize string quotes and improve code formatting across multiple files">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="style: standardize string formatting and improve code readability in config, data_processing, model, and utils modules">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/main_analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,38 +160,11 @@
       <workItem from="1753383734931" duration="1349000" />
       <workItem from="1753385425458" duration="12690000" />
       <workItem from="1753447422386" duration="2073000" />
-    </task>
-    <task id="LOCAL-00002" summary="feat: Trying new logic">
-      <option name="closed" value="true" />
-      <created>1752279588649</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1752279588649</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Update gitignore">
-      <option name="closed" value="true" />
-      <created>1752280148635</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1752280148635</updated>
-    </task>
-    <task id="LOCAL-00004" summary="feat: New Logic">
-      <option name="closed" value="true" />
-      <created>1752280211050</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1752280211050</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Upadte gitignore">
-      <option name="closed" value="true" />
-      <created>1752280288133</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1752280288133</updated>
+      <workItem from="1753467165832" duration="1794000" />
+      <workItem from="1753732966393" duration="4294000" />
+      <workItem from="1753779426609" duration="1985000" />
+      <workItem from="1753781471648" duration="107000" />
+      <workItem from="1753781581668" duration="2453000" />
     </task>
     <task id="LOCAL-00006" summary="feat: New Logic">
       <option name="closed" value="true" />
@@ -544,7 +526,39 @@
       <option name="project" value="LOCAL" />
       <updated>1753459392746</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="feat: update feature lists and enhance technical indicators in data processing">
+      <option name="closed" value="true" />
+      <created>1753485864927</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1753485864927</updated>
+    </task>
+    <task id="LOCAL-00052" summary="feat: add sentiment analysis and enhance stock data processing with technical indicators">
+      <option name="closed" value="true" />
+      <created>1753737258177</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1753737258177</updated>
+    </task>
+    <task id="LOCAL-00053" summary="feat: add SVM and ARIMA models for enhanced stock price prediction">
+      <option name="closed" value="true" />
+      <created>1753780390809</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1753780390810</updated>
+    </task>
+    <task id="LOCAL-00054" summary="style: standardize string formatting and improve code readability in config, data_processing, model, and utils modules">
+      <option name="closed" value="true" />
+      <created>1753780491274</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1753780491274</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,10 +588,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="chore: delete analysis_using_lstm.html file to clean up unused resources" />
-    <MESSAGE value="feat: add stock data downloader and LSTM-based sentiment analysis notebooks" />
-    <MESSAGE value="refactor: streamline `analysis_using_lstm.ipynb` by reducing content and simplifying structure" />
-    <MESSAGE value="chore: delete `analysis_using_lstm.ipynb` to remove unused notebook" />
     <MESSAGE value="refactor: simplify and streamline `analysis_using_lstm.ipynb` for improved readability and reduced size" />
     <MESSAGE value="refactor: reduce `analysis_using_lstm.ipynb` size by removing excessive content and simplifying structure" />
     <MESSAGE value="refactor: further reduce `analysis_using_lstm.ipynb` size by removing redundant sections and streamlining content" />
@@ -599,7 +609,11 @@
     <MESSAGE value="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration" />
     <MESSAGE value="feat: enhance plotting functions in utils.py to save figures and improve visualization" />
     <MESSAGE value="style: standardize string quotes and improve code formatting across multiple files" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: standardize string quotes and improve code formatting across multiple files" />
+    <MESSAGE value="feat: update feature lists and enhance technical indicators in data processing" />
+    <MESSAGE value="feat: add sentiment analysis and enhance stock data processing with technical indicators" />
+    <MESSAGE value="feat: add SVM and ARIMA models for enhanced stock price prediction" />
+    <MESSAGE value="style: standardize string formatting and improve code readability in config, data_processing, model, and utils modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: standardize string formatting and improve code readability in config, data_processing, model, and utils modules" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -7,8 +7,12 @@ from sklearn.svm import SVR
 from statsmodels.tsa.arima.model import ARIMA
 
 
+# ======================================================
+# PREPARING DATA FOR LSTM
+# ======================================================
+
 def prepare_data_for_lstm(
-    data, feature_columns, target_column, sequence_length, test_size
+        data, feature_columns, target_column, sequence_length, test_size
 ):
     """A unified function to prepare data for LSTM models."""
     if target_column not in feature_columns:
@@ -26,13 +30,13 @@ def prepare_data_for_lstm(
 
     X_train, y_train = [], []
     for i in range(sequence_length, len(train_scaled)):
-        X_train.append(train_scaled[i - sequence_length : i, :])
+        X_train.append(train_scaled[i - sequence_length: i, :])
         y_train.append(train_scaled[i, target_idx])
 
     inputs = np.concatenate((train_scaled[-sequence_length:], test_scaled), axis=0)
     X_test, y_test = [], []
     for i in range(sequence_length, len(inputs)):
-        X_test.append(inputs[i - sequence_length : i, :])
+        X_test.append(inputs[i - sequence_length: i, :])
         y_test.append(inputs[i, target_idx])
 
     return (
@@ -43,6 +47,10 @@ def prepare_data_for_lstm(
         scaler,
     )
 
+
+# ======================================================
+# SINGLE-LAYER LSTM
+# ======================================================
 
 def build_single_layer_lstm(input_shape):
     """Builds a single-layer LSTM model."""
@@ -56,6 +64,10 @@ def build_single_layer_lstm(input_shape):
     model.compile(optimizer=Adam(learning_rate=0.001), loss="mean_squared_error")
     return model
 
+
+# ======================================================
+# MULTI-LAYER LSTM
+# ======================================================
 
 def build_multi_layer_lstm(input_shape):
     """Builds a stacked, multi-layer LSTM model."""
@@ -72,6 +84,10 @@ def build_multi_layer_lstm(input_shape):
     model.compile(optimizer=Adam(learning_rate=0.001), loss="mean_squared_error")
     return model
 
+
+# ======================================================
+# GRU
+# ======================================================
 
 def build_gru(input_shape, units=50, dropout_rate=0.2):
     """
@@ -91,6 +107,10 @@ def build_gru(input_shape, units=50, dropout_rate=0.2):
     return model
 
 
+# ======================================================
+# SVM
+# ======================================================
+
 def build_and_train_svm(X_train, y_train):
     """Builds and trains a Support Vector Machine for regression."""
     print("Building and training SVM model...")
@@ -100,6 +120,10 @@ def build_and_train_svm(X_train, y_train):
     print("SVM training complete.")
     return svm_model
 
+
+# ======================================================
+# ARIMA
+# ======================================================
 
 def build_and_train_arima(train_data):
     """Builds and trains a simple ARIMA model."""

@@ -4,17 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="style: standardize string formatting and improve code readability in config, data_processing, model, and utils modules">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: enhance stock price prediction by adding SVM and ARIMA models, update sequence length and batch size, and improve data loading with error handling">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/main_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Percentage Prediction/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Percentage Prediction/data_processing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Percentage Prediction/main_analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Percentage Prediction/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Percentage Prediction/sentiment_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Percentage Prediction/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/data_processing.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/main_analysis.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/model.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/sentiment_analysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/utils.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,6 +173,7 @@
       <workItem from="1753779426609" duration="1985000" />
       <workItem from="1753781471648" duration="107000" />
       <workItem from="1753781581668" duration="2453000" />
+      <workItem from="1753785692093" duration="3085000" />
     </task>
     <task id="LOCAL-00006" summary="feat: New Logic">
       <option name="closed" value="true" />

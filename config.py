@@ -8,20 +8,12 @@ UPDATE_SENTIMENT_CSV = True  # Set to True to force re-generation of sentiment d
 UPDATE_STOCK_CSV = True  # Set to True to force re-fetching of stock data
 
 # Model Parameters
-SEQUENCE_LENGTH = 90  # Number of days to look back for prediction
-TEST_SIZE = 0.2  # Proportion of data for testing
-EPOCHS = 100  # Number of training epochs
+SEQUENCE_LENGTH = 30  # Number of days to look back for prediction
+TEST_SIZE = 0.1  # Proportion of data for testing
+EPOCHS = 50  # Number of training epochs
 BATCH_SIZE = 32  # Batch size for training
 
-BASELINE_FEATURES = [
-    "Close",
-    "SMA_50",
-    "RSI",
-    "MACD_line",
-    "BB_width",
-    "OBV",
-    "Volume"
-]
+BASELINE_FEATURES = ["Close", "SMA_50", "RSI", "MACD_line", "BB_width", "OBV", "Volume"]
 
 BASELINE_TARGET = "Close"
 

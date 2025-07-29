@@ -69,20 +69,20 @@ def calculate_technical_indicators(data):
     atr = tr["tr"].ewm(span=period, adjust=False).mean()
 
     df["+DI"] = 100 * (
-        df["High"]
-        .diff()
-        .where(df["High"].diff() > df["Low"].diff(), 0)
-        .ewm(alpha=1 / period, adjust=False)
-        .mean()
-        / atr
+            df["High"]
+            .diff()
+            .where(df["High"].diff() > df["Low"].diff(), 0)
+            .ewm(alpha=1 / period, adjust=False)
+            .mean()
+            / atr
     )
     df["-DI"] = 100 * (
-        df["Low"]
-        .diff()
-        .where(df["Low"].diff() > df["High"].diff(), 0)
-        .ewm(alpha=1 / period, adjust=False)
-        .mean()
-        / atr
+            df["Low"]
+            .diff()
+            .where(df["Low"].diff() > df["High"].diff(), 0)
+            .ewm(alpha=1 / period, adjust=False)
+            .mean()
+            / atr
     )
 
     dx = 100 * abs(df["+DI"] - df["-DI"]) / (df["+DI"] + df["-DI"])
@@ -111,6 +111,32 @@ def calculate_technical_indicators(data):
     # 7. On-Balance Volume (OBV)
     df["OBV"] = (np.sign(df["Close"].diff()) * df["Volume"]).fillna(0).cumsum()
 
+    # 8. Average True Range (ATR)
+    # ATR is a measure of volatility.
+    high_low = df["High"] - df["Low"]
+    high_close = np.abs(df["High"] - df["Close"].shift())
+    low_close = np.abs(df["Low"] - df["Close"].shift())
+    ranges = pd.concat([high_low, high_close, low_close], axis=1)
+    true_range = np.max(ranges, axis=1)
+    df["ATR"] = true_range.ewm(span=14, adjust=False).mean()
+
+    # 9. Chaikin Money Flow (CMF)
+    # Measures the amount of Money Flow Volume over a specific period.
+    # Positive CMF indicates buying pressure, negative indicates selling pressure.
+    clv = ((df["Close"] - df["Low"]) - (df["High"] - df["Close"])) / (
+            df["High"] - df["Low"]
+    )
+    clv = clv.fillna(0)  # Fills any NaNs that might result from High == Low
+    mfv = clv * df["Volume"]
+    cmf_period = 20
+    df["CMF"] = (
+            mfv.rolling(window=cmf_period).sum()
+            / df["Volume"].rolling(window=cmf_period).sum()
+    )
+
+    # 10. Rate of Change (ROC) - for momentum
+    df["ROC"] = df["Close"].pct_change(periods=14) * 100
+
     # Drop rows with NaN values created by rolling windows
     df = df.dropna()
 
@@ -133,7 +159,7 @@ def create_enhanced_dataset(stock_data_with_indicators, daily_sentiment_df):
 
     # Simple sentiment ratio for modeling
     merged_data["Sentiment_Ratio"] = (
-        merged_data["Avg_Sentiment"] * merged_data["News_Count"]
+            merged_data["Avg_Sentiment"] * merged_data["News_Count"]
     ).fillna(0)
 
     print(f"Enhanced dataset shape: {merged_data.shape}")

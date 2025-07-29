@@ -4,25 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: enhance stock price prediction by adding SVM and ARIMA models, update sequence length and batch size, and improve data loading with error handling">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update requirements and configuration for improved model training, enhance data loading with error handling, and streamline data processing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Percentage Prediction/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Percentage Prediction/data_processing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Percentage Prediction/main_analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Percentage Prediction/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Percentage Prediction/sentiment_analysis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Percentage Prediction/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/data_processing.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/main_analysis.ipynb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/model.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/sentiment_analysis.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Price Prediction/utils.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +40,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,7 +66,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;performance__tuning&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/sandy/PycharmProjects/stock_market_analysis&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -173,15 +162,8 @@
       <workItem from="1753779426609" duration="1985000" />
       <workItem from="1753781471648" duration="107000" />
       <workItem from="1753781581668" duration="2453000" />
-      <workItem from="1753785692093" duration="3085000" />
-    </task>
-    <task id="LOCAL-00006" summary="feat: New Logic">
-      <option name="closed" value="true" />
-      <created>1752280299239</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1752280299239</updated>
+      <workItem from="1753785692093" duration="4253000" />
+      <workItem from="1753790966664" duration="7936000" />
     </task>
     <task id="LOCAL-00007" summary="Update gitignore">
       <option name="closed" value="true" />
@@ -567,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753780491274</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="feat: update requirements and configuration for improved model training, enhance data loading with error handling, and streamline data processing">
+      <option name="closed" value="true" />
+      <created>1753789806930</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1753789806930</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +574,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="performance_tuning" />
                       </list>
                     </value>
                   </entry>
@@ -597,7 +587,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: simplify and streamline `analysis_using_lstm.ipynb` for improved readability and reduced size" />
     <MESSAGE value="refactor: reduce `analysis_using_lstm.ipynb` size by removing excessive content and simplifying structure" />
     <MESSAGE value="refactor: further reduce `analysis_using_lstm.ipynb` size by removing redundant sections and streamlining content" />
     <MESSAGE value="refactor: significantly streamline `analysis_using_lstm.ipynb` by consolidating content, removing redundancy, and enhancing readability" />
@@ -622,7 +611,8 @@
     <MESSAGE value="feat: add sentiment analysis and enhance stock data processing with technical indicators" />
     <MESSAGE value="feat: add SVM and ARIMA models for enhanced stock price prediction" />
     <MESSAGE value="style: standardize string formatting and improve code readability in config, data_processing, model, and utils modules" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: standardize string formatting and improve code readability in config, data_processing, model, and utils modules" />
+    <MESSAGE value="feat: update requirements and configuration for improved model training, enhance data loading with error handling, and streamline data processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update requirements and configuration for improved model training, enhance data loading with error handling, and streamline data processing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

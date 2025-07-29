@@ -1,10 +1,12 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from sklearn.metrics import mean_squared_error, mean_absolute_error
 import config as cfg
 import os
 
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn.inspection import permutation_importance
+from sklearn.base import BaseEstimator, RegressorMixin
 
 def save_dataframe(df: pd.DataFrame, file_path: str):
     try:
@@ -42,7 +44,7 @@ def calculate_metrics(actual, predicted, model_name):
 
 
 def plot_model_results(
-    history, y_test, predictions, test_dates, stock_symbol, model_name
+        history, y_test, predictions, test_dates, stock_symbol, model_name
 ):
     """A generic function to visualize the results for any model."""
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))
@@ -145,5 +147,37 @@ def plot_final_comparison(results, stock_symbol):
     )  # <-- Use cfg.OUTPUT_DIR here
     plt.savefig(save_path)
     print(f"Plot saved to {save_path}")
+
+    plt.show()
+
+
+def plot_residuals(y_test, predictions, test_dates, stock_symbol, model_name):
+    """
+    Plots the residuals (errors) of the model's predictions over time.
+    """
+    residuals = y_test.flatten() - predictions.flatten()
+
+    plt.figure(figsize=(14, 6))
+    plt.plot(
+        test_dates,
+        residuals,
+        label="Residuals (Actual - Predicted)",
+        color="purple",
+        alpha=0.8,
+    )
+    plt.axhline(y=0, color="r", linestyle="--", label="Zero Error")
+
+    plt.title(f"{stock_symbol} - {model_name} Prediction Residuals", fontsize=16)
+    plt.xlabel("Date")
+    plt.ylabel("Prediction Error ($)")
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+
+    safe_model_name = model_name.replace(" ", "_").replace("(", "").replace(")", "")
+    save_path = os.path.join(
+        cfg.OUTPUT_DIR, f"{stock_symbol}_{safe_model_name}_residuals.png"
+    )
+    plt.savefig(save_path)
+    print(f"Residuals plot saved to {save_path}")
 
     plt.show()

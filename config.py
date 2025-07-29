@@ -4,7 +4,7 @@ DATASET_DIR = "Dataset"
 OUTPUT_DIR = "Output"
 NEWS_DATA_FILE = f"{DATASET_DIR}/news_data.csv"  # Path to your news data
 
-UPDATE_SENTIMENT_CSV = True  # Set to True to force re-generation of sentiment data
+UPDATE_SENTIMENT_CSV = False  # Set to True to force re-generation of sentiment data
 UPDATE_STOCK_CSV = True  # Set to True to force re-fetching of stock data
 
 # Model Parameters
@@ -13,7 +13,18 @@ TEST_SIZE = 0.1  # Proportion of data for testing
 EPOCHS = 50  # Number of training epochs
 BATCH_SIZE = 32  # Batch size for training
 
-BASELINE_FEATURES = ["Close", "SMA_50", "RSI", "MACD_line", "BB_width", "OBV", "Volume"]
+BASELINE_FEATURES = [
+    "Close",
+    "SMA_50",
+    "RSI",
+    "MACD_line",
+    "BB_width",
+    "OBV",
+    "Volume",
+    "ATR",
+    "CMF",
+    "ROC",
+]
 
 BASELINE_TARGET = "Close"
 
@@ -25,6 +36,9 @@ ENHANCED_FEATURES = [
     "BB_width",
     "OBV",
     "Volume",
+    "ATR",
+    "CMF",
+    "ROC",
     "Avg_Sentiment",
     "Sentiment_Ratio",
     "News_Count",

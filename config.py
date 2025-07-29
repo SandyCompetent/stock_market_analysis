@@ -4,7 +4,7 @@ DATASET_DIR = "Dataset"
 OUTPUT_DIR = "Output"
 NEWS_DATA_FILE = f"{DATASET_DIR}/news_data.csv"  # Path to your news data
 
-UPDATE_SENTIMENT_CSV = True  # Set to True to force re-generation of sentiment data
+UPDATE_SENTIMENT_CSV = False  # Set to True to force re-generation of sentiment data
 UPDATE_STOCK_CSV = True  # Set to True to force re-fetching of stock data
 
 # Model Parameters
@@ -25,7 +25,11 @@ BASELINE_FEATURES = [
     "Close_diff_1",
     "Close_diff_2",
     "Close_diff_5",
-    "Returns"
+    "Returns",
+    "Inflation_CPI",
+    "Interest_Rate",
+    "Unemployment_Rate"
+    # "VIX_Close"
 ]
 
 BASELINE_TARGET = "Returns"
@@ -48,7 +52,11 @@ ENHANCED_FEATURES = [
     "Positive_Count",
     "Negative_Count",
     "News_Count",
-    "Returns"
+    "Returns",
+    "Inflation_CPI",
+    "Interest_Rate",
+    "Unemployment_Rate"
+    # "VIX_Close"
 ]
 
 ENHANCED_TARGET = "Returns"

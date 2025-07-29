@@ -164,5 +164,6 @@ def create_enhanced_dataset(stock_data_with_indicators, daily_sentiment_df):
         "Negative_Count", "Neutral_Count", "News_Count"
     ]
     merged_data[sentiment_cols] = merged_data[sentiment_cols].fillna(0)
+
     print(f"Enhanced dataset shape: {merged_data.shape}")
     return merged_data

@@ -42,7 +42,7 @@ def calculate_metrics(actual, predicted, model_name):
 
 
 def plot_model_results(
-    history, y_test, predictions, test_dates, stock_symbol, model_name
+        history, y_test, predictions, test_dates, stock_symbol, model_name
 ):
     """A generic function to visualize the results for any model."""
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))
@@ -67,7 +67,26 @@ def plot_model_results(
     safe_model_name = model_name.replace(" ", "_").replace("(", "").replace(")", "")
     save_path = os.path.join(
         cfg.OUTPUT_DIR, f"{stock_symbol}_{safe_model_name}_analysis.png"
-    )  # <-- Use cfg.OUTPUT_DIR here
+    )
+    plt.savefig(save_path)
+    print(f"Plot saved to {save_path}")
+
+    plt.show()
+
+
+def plot_non_keras_results(y_test, predictions, test_dates, stock_symbol, model_name):
+    """A generic function to visualize results for non-Keras models."""
+    plt.figure(figsize=(12, 6))
+    plt.title(f"{stock_symbol} - {model_name} Analysis", fontsize=16, fontweight="bold")
+    plt.plot(test_dates, y_test, label="Actual Price", color="black")
+    plt.plot(test_dates, predictions, label=f"{model_name} Prediction", color="blue", alpha=0.8)
+    plt.legend()
+    plt.grid(True, alpha=0.3)
+
+    safe_model_name = model_name.replace(" ", "_").replace("(", "").replace(")", "")
+    save_path = os.path.join(
+        cfg.OUTPUT_DIR, f"{stock_symbol}_{safe_model_name}_analysis.png"
+    )
     plt.savefig(save_path)
     print(f"Plot saved to {save_path}")
 
@@ -94,8 +113,13 @@ def plot_final_comparison(results, stock_symbol):
         "Baseline LSTM": "blue",
         "Multi-Layer LSTM": "green",
         "Enhanced LSTM": "red",
-        "Multi-Layer Enhanced LSTM": "purple",  # Added new color
+        "Multi-Layer Enhanced LSTM": "purple",
+        "Baseline SVM": "orange",
+        "Enhanced SVM": "cyan",
+        "ARIMA": "magenta"
     }
+
+    # Ensure all models are plotted
     for name, data in results.items():
         if name != "Actual":
             plt.plot(

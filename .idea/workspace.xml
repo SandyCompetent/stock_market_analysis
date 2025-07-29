@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update feature lists and enhance technical indicators in data processing">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025,_20_57_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_07_2025__20_57__Changes_.xml" beforeDir="false" />
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: add sentiment analysis and enhance stock data processing with technical indicators">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/streamlit_app.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/main_analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Price Prediction/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Price Prediction/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,15 +155,8 @@
       <workItem from="1753385425458" duration="12690000" />
       <workItem from="1753447422386" duration="2073000" />
       <workItem from="1753467165832" duration="1794000" />
-      <workItem from="1753732966393" duration="3982000" />
-    </task>
-    <task id="LOCAL-00003" summary="Update gitignore">
-      <option name="closed" value="true" />
-      <created>1752280148635</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1752280148635</updated>
+      <workItem from="1753732966393" duration="4294000" />
+      <workItem from="1753779426609" duration="896000" />
     </task>
     <task id="LOCAL-00004" summary="feat: New Logic">
       <option name="closed" value="true" />
@@ -553,7 +542,15 @@
       <option name="project" value="LOCAL" />
       <updated>1753485864927</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="feat: add sentiment analysis and enhance stock data processing with technical indicators">
+      <option name="closed" value="true" />
+      <created>1753737258177</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1753737258177</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -583,7 +580,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add stock data downloader and LSTM-based sentiment analysis notebooks" />
     <MESSAGE value="refactor: streamline `analysis_using_lstm.ipynb` by reducing content and simplifying structure" />
     <MESSAGE value="chore: delete `analysis_using_lstm.ipynb` to remove unused notebook" />
     <MESSAGE value="refactor: simplify and streamline `analysis_using_lstm.ipynb` for improved readability and reduced size" />
@@ -608,7 +604,8 @@
     <MESSAGE value="feat: enhance plotting functions in utils.py to save figures and improve visualization" />
     <MESSAGE value="style: standardize string quotes and improve code formatting across multiple files" />
     <MESSAGE value="feat: update feature lists and enhance technical indicators in data processing" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update feature lists and enhance technical indicators in data processing" />
+    <MESSAGE value="feat: add sentiment analysis and enhance stock data processing with technical indicators" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add sentiment analysis and enhance stock data processing with technical indicators" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

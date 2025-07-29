@@ -21,7 +21,7 @@ BASELINE_FEATURES = [
     "BB_width",
     "OBV",
     "Volume",
-    "Pct_Change"
+    "Pct_Change",
 ]
 
 BASELINE_TARGET = "Pct_Change"
@@ -37,6 +37,6 @@ ENHANCED_FEATURES = [
     "Avg_Sentiment",
     "Sentiment_Ratio",
     "News_Count",
-    "Pct_Change"
+    "Pct_Change",
 ]
 ENHANCED_TARGET = "Pct_Change"

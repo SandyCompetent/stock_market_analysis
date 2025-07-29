@@ -8,7 +8,7 @@ from statsmodels.tsa.arima.model import ARIMA
 
 
 def prepare_data_for_lstm(
-        data, feature_columns, target_column, sequence_length, test_size
+    data, feature_columns, target_column, sequence_length, test_size
 ):
     """A unified function to prepare data for LSTM models."""
     if target_column not in feature_columns:
@@ -26,13 +26,13 @@ def prepare_data_for_lstm(
 
     X_train, y_train = [], []
     for i in range(sequence_length, len(train_scaled)):
-        X_train.append(train_scaled[i - sequence_length: i, :])
+        X_train.append(train_scaled[i - sequence_length : i, :])
         y_train.append(train_scaled[i, target_idx])
 
     inputs = np.concatenate((train_scaled[-sequence_length:], test_scaled), axis=0)
     X_test, y_test = [], []
     for i in range(sequence_length, len(inputs)):
-        X_test.append(inputs[i - sequence_length: i, :])
+        X_test.append(inputs[i - sequence_length : i, :])
         y_test.append(inputs[i, target_idx])
 
     return (
@@ -77,22 +77,25 @@ def build_gru(input_shape, units=50, dropout_rate=0.2):
     """
     Creates a GRU model.
     """
-    model = Sequential([
-        GRU(units, return_sequences=True, input_shape=input_shape),
-        Dropout(dropout_rate),
-        GRU(units, return_sequences=False),
-        Dropout(dropout_rate),
-        Dense(25),
-        Dense(1)
-    ])
-    model.compile(optimizer='adam', loss='mean_squared_error')
+    model = Sequential(
+        [
+            GRU(units, return_sequences=True, input_shape=input_shape),
+            Dropout(dropout_rate),
+            GRU(units, return_sequences=False),
+            Dropout(dropout_rate),
+            Dense(25),
+            Dense(1),
+        ]
+    )
+    model.compile(optimizer="adam", loss="mean_squared_error")
     return model
+
 
 def build_and_train_svm(X_train, y_train):
     """Builds and trains a Support Vector Machine for regression."""
     print("Building and training SVM model...")
     # SVR with a radial basis function kernel is a good starting point
-    svm_model = SVR(kernel='rbf', C=100, gamma=0.1, epsilon=.1)
+    svm_model = SVR(kernel="rbf", C=100, gamma=0.1, epsilon=0.1)
     svm_model.fit(X_train, y_train)
     print("SVM training complete.")
     return svm_model

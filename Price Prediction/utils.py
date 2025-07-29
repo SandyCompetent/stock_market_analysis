@@ -42,7 +42,7 @@ def calculate_metrics(actual, predicted, model_name):
 
 
 def plot_model_results(
-        history, y_test, predictions, test_dates, stock_symbol, model_name
+    history, y_test, predictions, test_dates, stock_symbol, model_name
 ):
     """A generic function to visualize the results for any model."""
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))
@@ -79,7 +79,13 @@ def plot_non_keras_results(y_test, predictions, test_dates, stock_symbol, model_
     plt.figure(figsize=(12, 6))
     plt.title(f"{stock_symbol} - {model_name} Analysis", fontsize=16, fontweight="bold")
     plt.plot(test_dates, y_test, label="Actual Price", color="black")
-    plt.plot(test_dates, predictions, label=f"{model_name} Prediction", color="blue", alpha=0.8)
+    plt.plot(
+        test_dates,
+        predictions,
+        label=f"{model_name} Prediction",
+        color="blue",
+        alpha=0.8,
+    )
     plt.legend()
     plt.grid(True, alpha=0.3)
 
@@ -116,7 +122,7 @@ def plot_final_comparison(results, stock_symbol):
         "Multi-Layer Enhanced LSTM": "purple",
         "Baseline SVM": "orange",
         "Enhanced SVM": "cyan",
-        "ARIMA": "magenta"
+        "ARIMA": "magenta",
     }
 
     # Ensure all models are plotted

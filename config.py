@@ -13,15 +13,7 @@ TEST_SIZE = 0.2  # Proportion of data for testing
 EPOCHS = 100  # Number of training epochs
 BATCH_SIZE = 100  # Batch size for training
 
-BASELINE_FEATURES = [
-    "Close",
-    "SMA_50",
-    "RSI",
-    "MACD_line",
-    "BB_width",
-    "OBV",
-    "Volume"
-]
+BASELINE_FEATURES = ["Close", "SMA_50", "RSI", "MACD_line", "BB_width", "OBV", "Volume"]
 
 BASELINE_TARGET = "Close"
 

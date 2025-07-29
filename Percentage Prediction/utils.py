@@ -48,7 +48,9 @@ def plot_model_results(
     """A generic function to visualize the results for any model."""
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))
     fig.suptitle(
-        f"{stock_symbol} - {model_name} Percentage Change Prediction Analysis", fontsize=16, fontweight="bold"
+        f"{stock_symbol} - {model_name} Percentage Change Prediction Analysis",
+        fontsize=16,
+        fontweight="bold",
     )
 
     # Training history
@@ -59,7 +61,9 @@ def plot_model_results(
 
     # Predictions vs Actual
     axes[1].plot(test_dates, y_test, label="Actual Change (%)", color="black")
-    axes[1].plot(test_dates, predictions, label=f"{model_name} Prediction (%)", color="red")
+    axes[1].plot(
+        test_dates, predictions, label=f"{model_name} Prediction (%)", color="red"
+    )
     axes[1].set_title("Predictions vs Actual Percentage Change")
     axes[1].set_ylabel("Percentage Change (%)")  # Add Y-axis label
     axes[1].legend()

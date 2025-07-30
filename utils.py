@@ -93,12 +93,12 @@ def calculate_metrics(actual, predicted, model_name, train_actual):
         "MAPE (%)": mape,
         "R-squared": r2,
         "Directional_Accuracy": directional_accuracy,
-        "MASE": mase
+        "MASE": mase,
     }
 
 
 def plot_model_results(
-        history, y_test, predictions, test_dates, stock_symbol, model_name
+    history, y_test, predictions, test_dates, stock_symbol, model_name
 ):
     """A generic function to visualize the results for any model."""
     fig, axes = plt.subplots(1, 2, figsize=(18, 6))

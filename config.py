@@ -11,7 +11,18 @@ UPDATE_STOCK_CSV = True  # Set to True to force re-fetching of stock data
 SEQUENCE_LENGTH = 30  # Number of days to look back for prediction
 TEST_SIZE = 0.1  # Proportion of data for testing
 
-BASELINE_FEATURES = [
+# ========================================================
+# BASELINE MODEL CONFIGURATION
+# ========================================================
+
+BASELINE_FEATURES = ["Close", "Returns"]
+BASELINE_TARGET = "Returns"
+
+# ========================================================
+# TECHNICAL MODEL CONFIGURATION
+# ========================================================
+
+TECHNICAL_FEATURES = [
     "Close",
     "SMA_50",
     "RSI",
@@ -28,13 +39,17 @@ BASELINE_FEATURES = [
     "Returns",
     "Inflation_CPI",
     "Interest_Rate",
-    "Unemployment_Rate"
-    # "VIX_Close"
+    "Unemployment_Rate",
+    "VIX_Close",
 ]
 
-BASELINE_TARGET = "Returns"
+TECHNICAL_TARGET = "Returns"
 
-ENHANCED_FEATURES = [
+# ========================================================
+# HYBRID MODEL CONFIGURATION
+# ========================================================
+
+HYBRID_FEATURES = [
     "Close",
     "SMA_50",
     "RSI",
@@ -55,8 +70,8 @@ ENHANCED_FEATURES = [
     "Returns",
     "Inflation_CPI",
     "Interest_Rate",
-    "Unemployment_Rate"
-    # "VIX_Close"
+    "Unemployment_Rate",
+    "VIX_Close",
 ]
 
-ENHANCED_TARGET = "Returns"
+HYBRID_TARGET = "Returns"

@@ -36,7 +36,7 @@ class SentimentAnalyzer:
         all_sentiments, all_confidence_scores, all_single_scores = [], [], []
         print(f"Analyzing {len(text_list)} headlines in batches of {batch_size}...")
         for i in tqdm(range(0, len(text_list), batch_size)):
-            batch = list(text_list[i: i + batch_size])
+            batch = list(text_list[i : i + batch_size])
             cleaned_batch = [str(text) if text is not None else "" for text in batch]
             try:
                 inputs = self.tokenizer(
@@ -53,7 +53,7 @@ class SentimentAnalyzer:
                 confidence_scores, predictions = torch.max(probabilities, dim=1)
                 sentiments = [self.sentiment_map[pred.item()] for pred in predictions]
                 single_scores = (
-                        probabilities[:, self.pos_id] - probabilities[:, self.neg_id]
+                    probabilities[:, self.pos_id] - probabilities[:, self.neg_id]
                 )
                 all_sentiments.extend(sentiments)
                 all_confidence_scores.extend(confidence_scores.cpu().tolist())
@@ -99,33 +99,40 @@ def aggregate_daily_sentiment(sentiment_df):
     print("\n📊 Aggregating daily sentiment scores...")
 
     # Create dummy variables for one-hot encoding of sentiment
-    sentiment_dummies = pd.get_dummies(sentiment_df['Sentiment'], prefix='Sentiment')
+    sentiment_dummies = pd.get_dummies(sentiment_df["Sentiment"], prefix="Sentiment")
     sentiment_df = pd.concat([sentiment_df, sentiment_dummies], axis=1)
 
     # Ensure all possible sentiment columns exist, filling missing ones with 0
-    expected_sentiment_cols = ['Sentiment_Positive', 'Sentiment_Negative', 'Sentiment_Neutral']
+    expected_sentiment_cols = [
+        "Sentiment_Positive",
+        "Sentiment_Negative",
+        "Sentiment_Neutral",
+    ]
     for col in expected_sentiment_cols:
         if col not in sentiment_df.columns:
             sentiment_df[col] = 0
 
     # Define aggregations
     agg_functions = {
-        'Sentiment_Score': ['mean', 'sum'],
-        'Sentiment_Positive': ['sum'],
-        'Sentiment_Negative': ['sum'],
-        'Sentiment_Neutral': ['sum']
+        "Sentiment_Score": ["mean", "sum"],
+        "Sentiment_Positive": ["sum"],
+        "Sentiment_Negative": ["sum"],
+        "Sentiment_Neutral": ["sum"],
     }
 
     # Group by date and aggregate
-    daily_sentiment = sentiment_df.groupby('Date').agg(agg_functions).round(4)
+    daily_sentiment = sentiment_df.groupby("Date").agg(agg_functions).round(4)
 
     # Flatten the multi-level column names
     daily_sentiment.columns = [
-        'Avg_Sentiment', 'Total_Sentiment',
-        'Positive_Count', 'Negative_Count', 'Neutral_Count'
+        "Avg_Sentiment",
+        "Total_Sentiment",
+        "Positive_Count",
+        "Negative_Count",
+        "Neutral_Count",
     ]
 
     # Also add the total news count for the day
-    daily_sentiment['News_Count'] = sentiment_df.groupby('Date')['title'].count()
+    daily_sentiment["News_Count"] = sentiment_df.groupby("Date")["title"].count()
 
     return daily_sentiment

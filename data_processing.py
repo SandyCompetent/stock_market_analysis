@@ -69,20 +69,20 @@ def calculate_technical_indicators(data):
     atr = tr["tr"].ewm(span=period, adjust=False).mean()
 
     df["+DI"] = 100 * (
-            df["High"]
-            .diff()
-            .where(df["High"].diff() > df["Low"].diff(), 0)
-            .ewm(alpha=1 / period, adjust=False)
-            .mean()
-            / atr
+        df["High"]
+        .diff()
+        .where(df["High"].diff() > df["Low"].diff(), 0)
+        .ewm(alpha=1 / period, adjust=False)
+        .mean()
+        / atr
     )
     df["-DI"] = 100 * (
-            df["Low"]
-            .diff()
-            .where(df["Low"].diff() > df["High"].diff(), 0)
-            .ewm(alpha=1 / period, adjust=False)
-            .mean()
-            / atr
+        df["Low"]
+        .diff()
+        .where(df["Low"].diff() > df["High"].diff(), 0)
+        .ewm(alpha=1 / period, adjust=False)
+        .mean()
+        / atr
     )
 
     dx = 100 * abs(df["+DI"] - df["-DI"]) / (df["+DI"] + df["-DI"])
@@ -124,14 +124,14 @@ def calculate_technical_indicators(data):
     # Measures the amount of Money Flow Volume over a specific period.
     # Positive CMF indicates buying pressure, negative indicates selling pressure.
     clv = ((df["Close"] - df["Low"]) - (df["High"] - df["Close"])) / (
-            df["High"] - df["Low"]
+        df["High"] - df["Low"]
     )
     clv = clv.fillna(0)  # Fills any NaNs that might result from High == Low
     mfv = clv * df["Volume"]
     cmf_period = 20
     df["CMF"] = (
-            mfv.rolling(window=cmf_period).sum()
-            / df["Volume"].rolling(window=cmf_period).sum()
+        mfv.rolling(window=cmf_period).sum()
+        / df["Volume"].rolling(window=cmf_period).sum()
     )
 
     # 10. Rate of Change (ROC) - for momentum
@@ -160,8 +160,12 @@ def create_enhanced_dataset(stock_data_with_indicators, daily_sentiment_df):
     merged_data = enhanced_stock_data.join(daily_sentiment_df, how="left")
 
     sentiment_cols = [
-        "Avg_Sentiment", "Total_Sentiment", "Positive_Count",
-        "Negative_Count", "Neutral_Count", "News_Count"
+        "Avg_Sentiment",
+        "Total_Sentiment",
+        "Positive_Count",
+        "Negative_Count",
+        "Neutral_Count",
+        "News_Count",
     ]
     merged_data[sentiment_cols] = merged_data[sentiment_cols].fillna(0)
 

@@ -24,17 +24,17 @@ class ComprehensiveAnalysisReport:
     """
     A comprehensive analysis class that evaluates the entire stock market prediction project.
     """
-    
+
     def __init__(self):
         self.report_sections = []
         self.model_analysis = {}
         self.recommendations = []
-        
+
     def analyze_codebase_structure(self):
         """Analyze the current codebase structure and implementation."""
         analysis = {
-            'title': 'CODEBASE STRUCTURE ANALYSIS',
-            'content': """
+            "title": "CODEBASE STRUCTURE ANALYSIS",
+            "content": """
 === PROJECT ARCHITECTURE ===
 
 The stock market analysis project follows a well-structured modular design:
@@ -73,45 +73,53 @@ The stock market analysis project follows a well-structured modular design:
    - Model comparison tools
    - ✓ Strengths: Rich evaluation framework, professional visualizations
    - ⚠ Areas for improvement: Could add statistical significance tests
-            """
+            """,
         }
         self.report_sections.append(analysis)
-        
+
     def analyze_model_performance(self, results_df=None):
         """Analyze individual model performance and characteristics."""
-        
+
         # If no results provided, create a template analysis
         if results_df is None:
             results_df = self._create_sample_results()
-            
+
         analysis = {
-            'title': 'MODEL PERFORMANCE ANALYSIS',
-            'content': self._generate_model_analysis(results_df)
+            "title": "MODEL PERFORMANCE ANALYSIS",
+            "content": self._generate_model_analysis(results_df),
         }
         self.report_sections.append(analysis)
-        
+
     def _create_sample_results(self):
         """Create sample results for demonstration purposes."""
-        return pd.DataFrame({
-            'Model': ['Single-Layer LSTM', 'Multi-Layer LSTM', 'GRU', 'SVM', 'ARIMA'],
-            'RMSE': [0.0245, 0.0238, 0.0241, 0.0267, 0.0289],
-            'MAE': [0.0189, 0.0184, 0.0187, 0.0201, 0.0218],
-            'MAPE (%)': [12.45, 11.89, 12.12, 13.67, 14.23],
-            'R-squared': [0.342, 0.367, 0.351, 0.298, 0.245],
-            'Directional_Accuracy': [52.3, 54.1, 53.2, 49.8, 47.6],
-            'MASE': [0.89, 0.86, 0.88, 0.95, 1.02]
-        })
-        
+        return pd.DataFrame(
+            {
+                "Model": [
+                    "Single-Layer LSTM",
+                    "Multi-Layer LSTM",
+                    "GRU",
+                    "SVM",
+                    "ARIMA",
+                ],
+                "RMSE": [0.0245, 0.0238, 0.0241, 0.0267, 0.0289],
+                "MAE": [0.0189, 0.0184, 0.0187, 0.0201, 0.0218],
+                "MAPE (%)": [12.45, 11.89, 12.12, 13.67, 14.23],
+                "R-squared": [0.342, 0.367, 0.351, 0.298, 0.245],
+                "Directional_Accuracy": [52.3, 54.1, 53.2, 49.8, 47.6],
+                "MASE": [0.89, 0.86, 0.88, 0.95, 1.02],
+            }
+        )
+
     def _generate_model_analysis(self, results_df):
         """Generate detailed analysis for each model type."""
         content = """
 === INDIVIDUAL MODEL ANALYSIS ===
 
 """
-        
+
         # Analyze each model
         for _, row in results_df.iterrows():
-            model_name = row['Model']
+            model_name = row["Model"]
             content += f"""
 **{model_name.upper()}**
 
@@ -122,21 +130,21 @@ Performance Metrics:
 - Directional Accuracy: {row['Directional_Accuracy']:.1f}%
 
 """
-            
+
             # Model-specific analysis
-            if 'LSTM' in model_name:
+            if "LSTM" in model_name:
                 content += self._analyze_lstm(row)
-            elif 'GRU' in model_name:
+            elif "GRU" in model_name:
                 content += self._analyze_gru(row)
-            elif 'SVM' in model_name:
+            elif "SVM" in model_name:
                 content += self._analyze_svm(row)
-            elif 'ARIMA' in model_name:
+            elif "ARIMA" in model_name:
                 content += self._analyze_arima(row)
-                
-            content += "\n" + "="*60 + "\n"
-            
+
+            content += "\n" + "=" * 60 + "\n"
+
         return content
-        
+
     def _analyze_lstm(self, row):
         """Analyze LSTM model performance."""
         return """
@@ -228,8 +236,8 @@ RECOMMENDATIONS:
     def generate_improvement_recommendations(self):
         """Generate comprehensive improvement recommendations."""
         recommendations = {
-            'title': 'ACTIONABLE IMPROVEMENT RECOMMENDATIONS',
-            'content': """
+            "title": "ACTIONABLE IMPROVEMENT RECOMMENDATIONS",
+            "content": """
 === DATA PREPROCESSING ENHANCEMENTS ===
 
 1. **Advanced Feature Engineering**
@@ -311,15 +319,15 @@ RECOMMENDATIONS:
     → Implement model quantization
     → Add distributed training capabilities
     → Consider edge deployment optimization
-            """
+            """,
         }
         self.report_sections.append(recommendations)
-        
+
     def generate_visualization_recommendations(self):
         """Generate recommendations for enhanced visualizations."""
         viz_recommendations = {
-            'title': 'VISUALIZATION ENHANCEMENT RECOMMENDATIONS',
-            'content': """
+            "title": "VISUALIZATION ENHANCEMENT RECOMMENDATIONS",
+            "content": """
 === CURRENT VISUALIZATION STRENGTHS ===
 
 ✓ Comprehensive diagnostic plots (residuals, Q-Q plots, scatter plots)
@@ -358,21 +366,24 @@ RECOMMENDATIONS:
    → LIME explanations for individual predictions
    → Attention weight visualizations for neural networks
    → Partial dependence plots
-            """
+            """,
         }
         self.report_sections.append(viz_recommendations)
-        
+
     def generate_report(self, output_file=None):
         """Generate the complete comprehensive report."""
         if output_file is None:
-            output_file = os.path.join(cfg.OUTPUT_DIR, f"comprehensive_analysis_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt")
-            
+            output_file = os.path.join(
+                cfg.OUTPUT_DIR,
+                f"comprehensive_analysis_report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt",
+            )
+
         # Generate all sections
         self.analyze_codebase_structure()
         self.analyze_model_performance()
         self.generate_improvement_recommendations()
         self.generate_visualization_recommendations()
-        
+
         # Create the complete report
         report_content = f"""
 {'='*80}
@@ -386,25 +397,25 @@ Target Symbol: {cfg.STOCK_SYMBOL}
 {'='*80}
 
 """
-        
+
         # Add all sections
         for section in self.report_sections:
             report_content += f"\n{section['title']}\n"
-            report_content += "="*len(section['title']) + "\n"
-            report_content += section['content']
+            report_content += "=" * len(section["title"]) + "\n"
+            report_content += section["content"]
             report_content += "\n\n"
-            
+
         # Add conclusion
         report_content += self._generate_conclusion()
-        
+
         # Save the report
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             f.write(report_content)
-            
+
         print(f"📊 Comprehensive analysis report generated: {output_file}")
         return output_file
-        
+
     def _generate_conclusion(self):
         """Generate the conclusion section."""
         return """
@@ -448,13 +459,13 @@ END OF REPORT
 def main():
     """Main function to generate the comprehensive analysis report."""
     print("🚀 Starting Comprehensive Analysis Report Generation...")
-    
+
     # Create the analyzer
     analyzer = ComprehensiveAnalysisReport()
-    
+
     # Generate the report
     report_file = analyzer.generate_report()
-    
+
     print("✅ Analysis complete!")
     return report_file
 

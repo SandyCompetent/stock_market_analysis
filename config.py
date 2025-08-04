@@ -7,7 +7,9 @@ LOCAL_STOCK_FILE_PATH = f"{DATASET_DIR}/NVDA_stock_data.csv"
 
 UPDATE_SENTIMENT_CSV = True  # Set to True to force re-generation of sentiment data
 UPDATE_STOCK_CSV = True  # Set to True to force re-fetching of stock data
-LOAD_LOCAL_STOCK_FILE = True  # Set to True to load a specific file, False for default behavior
+LOAD_LOCAL_STOCK_FILE = (
+    True  # Set to True to load a specific file, False for default behavior
+)
 RESAMPLE_DATA = True
 
 # Model Parameters

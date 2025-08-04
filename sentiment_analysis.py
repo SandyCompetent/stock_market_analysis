@@ -73,7 +73,6 @@ def process_news_sentiment(news_df, target_stock):
         print(f"No news found for {target_stock}")
         return None
 
-
     company_news["date"] = pd.to_datetime(
         company_news["date"], utc=True, errors="coerce"
     )
@@ -117,8 +116,8 @@ def aggregate_daily_sentiment(sentiment_df):
     # The aggregation logic now needs to refer to the correct lowercase column names
     agg_functions = {
         "Sentiment_Score": ["mean", "sum"],
-        "Sentiment_positive": ["sum"], # Use lowercase 'p'
-        "Sentiment_negative": ["sum"], # Use lowercase 'n'
+        "Sentiment_positive": ["sum"],  # Use lowercase 'p'
+        "Sentiment_negative": ["sum"],  # Use lowercase 'n'
         "Sentiment_neutral": ["sum"],  # Use lowercase 'n'
     }
 

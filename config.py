@@ -2,12 +2,26 @@
 STOCK_SYMBOL = "NVDA"  # Target stock symbol
 DATASET_DIR = "Dataset"
 OUTPUT_DIR = "Output"
-NEWS_DATA_FILE = f"{DATASET_DIR}/news_data.csv"  # Path to your news data
+NEWS_DATA_FILE = f"{DATASET_DIR}/news_data.csv"
+LOCAL_STOCK_FILE_PATH = f"{DATASET_DIR}/NVDA_stock_data.csv"
 
 UPDATE_SENTIMENT_CSV = False  # Set to True to force re-generation of sentiment data
 UPDATE_STOCK_CSV = True  # Set to True to force re-fetching of stock data
+LOAD_LOCAL_STOCK_FILE = True  # Set to True to load a specific file, False for default behavior
+RESAMPLE_DATA = True
 
 # Model Parameters
+# 'D'  - Calendar day
+# 'W'  - Weekly (e.g., 'W-FRI' for Friday-ending weeks)
+# 'M'  - Month end
+# 'Q'  - Quarter end
+# 'Y'
+#
+# --- Time-Based Frequencies ---
+# 'H'  - Hourly
+# 'T'  - Minutely
+
+RESAMPLE_FREQUENCY = "1T"
 SEQUENCE_LENGTH = 30  # Number of days to look back for prediction
 TEST_SIZE = 0.1  # Proportion of data for testing
 

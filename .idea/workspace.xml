@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: add remote server configuration and update project SDK for improved deployment">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: add enhanced diagnostic plots and comprehensive analysis report generation for stock market predictions">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,28 +57,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.comprehensive_analysis_report.executor&quot;: &quot;Run&quot;,
-    &quot;Python.enhanced_analysis_demo.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;more__logic&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/sandy/PycharmProjects/stock_market_analysis&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;junie.allowlist&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.comprehensive_analysis_report.executor": "Run",
+    "Python.enhanced_analysis_demo.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.utils.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "more__logic",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "/Users/sandy/PycharmProjects/stock_market_analysis",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -176,15 +177,7 @@
       <workItem from="1754171170263" duration="724000" />
       <workItem from="1754172088177" duration="1413000" />
       <workItem from="1754256948861" duration="1068000" />
-      <workItem from="1754293823723" duration="541000" />
-    </task>
-    <task id="LOCAL-00015" summary="feat: New Logic">
-      <option name="closed" value="true" />
-      <created>1752280459538</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1752280459538</updated>
+      <workItem from="1754293823723" duration="3907000" />
     </task>
     <task id="LOCAL-00016" summary="feat: New Logic">
       <option name="closed" value="true" />
@@ -570,7 +563,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754172313541</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="feat: add enhanced diagnostic plots and comprehensive analysis report generation for stock market predictions">
+      <option name="closed" value="true" />
+      <created>1754294708938</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1754294708939</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add .gitignore file to exclude unnecessary files and directories" />
     <MESSAGE value="feat: update configuration and model functions for improved LSTM analysis and output management" />
     <MESSAGE value="feat: update sentiment analysis configuration and model parameters for enhanced performance" />
     <MESSAGE value="feat: adjust sequence length for stock price prediction model to improve accuracy" />
@@ -625,7 +625,8 @@
     <MESSAGE value="feat: update configuration for sentiment analysis and enhance data processing with additional economic indicators" />
     <MESSAGE value="feat: enhance model configuration and improve data processing for sentiment analysis" />
     <MESSAGE value="feat: add remote server configuration and update project SDK for improved deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add remote server configuration and update project SDK for improved deployment" />
+    <MESSAGE value="feat: add enhanced diagnostic plots and comprehensive analysis report generation for stock market predictions" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add enhanced diagnostic plots and comprehensive analysis report generation for stock market predictions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

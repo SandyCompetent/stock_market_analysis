@@ -5,7 +5,7 @@ OUTPUT_DIR = "Output"
 NEWS_DATA_FILE = f"{DATASET_DIR}/news_data.csv"
 LOCAL_STOCK_FILE_PATH = f"{DATASET_DIR}/NVDA_stock_data.csv"
 
-UPDATE_SENTIMENT_CSV = False  # Set to True to force re-generation of sentiment data
+UPDATE_SENTIMENT_CSV = True  # Set to True to force re-generation of sentiment data
 UPDATE_STOCK_CSV = True  # Set to True to force re-fetching of stock data
 LOAD_LOCAL_STOCK_FILE = True  # Set to True to load a specific file, False for default behavior
 RESAMPLE_DATA = True
@@ -21,7 +21,7 @@ RESAMPLE_DATA = True
 # 'H'  - Hourly
 # 'T'  - Minutely
 
-RESAMPLE_FREQUENCY = "1T"
+RESAMPLE_FREQUENCY = "1H"
 SEQUENCE_LENGTH = 30  # Number of days to look back for prediction
 TEST_SIZE = 0.1  # Proportion of data for testing
 

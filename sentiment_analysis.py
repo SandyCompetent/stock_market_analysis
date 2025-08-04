@@ -73,6 +73,7 @@ def process_news_sentiment(news_df, target_stock):
         print(f"No news found for {target_stock}")
         return None
 
+
     company_news["date"] = pd.to_datetime(
         company_news["date"], utc=True, errors="coerce"
     )
@@ -98,26 +99,27 @@ def aggregate_daily_sentiment(sentiment_df):
         return None
     print("\n📊 Aggregating daily sentiment scores...")
 
-    # Create dummy variables for one-hot encoding of sentiment
+    # This part is correct
     sentiment_dummies = pd.get_dummies(sentiment_df["Sentiment"], prefix="Sentiment")
     sentiment_df = pd.concat([sentiment_df, sentiment_dummies], axis=1)
 
-    # Ensure all possible sentiment columns exist, filling missing ones with 0
+    # --- FIX IS HERE ---
+    # Match the lowercase output of get_dummies: 'Sentiment_positive', etc.
     expected_sentiment_cols = [
-        "Sentiment_Positive",
-        "Sentiment_Negative",
-        "Sentiment_Neutral",
+        "Sentiment_positive",
+        "Sentiment_negative",
+        "Sentiment_neutral",
     ]
     for col in expected_sentiment_cols:
         if col not in sentiment_df.columns:
             sentiment_df[col] = 0
 
-    # Define aggregations
+    # The aggregation logic now needs to refer to the correct lowercase column names
     agg_functions = {
         "Sentiment_Score": ["mean", "sum"],
-        "Sentiment_Positive": ["sum"],
-        "Sentiment_Negative": ["sum"],
-        "Sentiment_Neutral": ["sum"],
+        "Sentiment_positive": ["sum"], # Use lowercase 'p'
+        "Sentiment_negative": ["sum"], # Use lowercase 'n'
+        "Sentiment_neutral": ["sum"],  # Use lowercase 'n'
     }
 
     # Group by date and aggregate
@@ -132,7 +134,7 @@ def aggregate_daily_sentiment(sentiment_df):
         "Neutral_Count",
     ]
 
-    # Also add the total news count for the day
+    # This part is also correct
     daily_sentiment["News_Count"] = sentiment_df.groupby("Date")["title"].count()
 
     return daily_sentiment

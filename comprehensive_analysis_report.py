@@ -1,16 +1,3 @@
-#!/usr/bin/env python3
-"""
-Comprehensive Analysis Report Generator
-=====================================
-
-This script provides a detailed analysis of the stock market prediction project,
-including model performance evaluation, strengths/weaknesses analysis, and
-actionable improvement recommendations.
-
-Author: AI Assistant
-Date: 2025-08-02
-"""
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -18,7 +5,6 @@ import seaborn as sns
 from datetime import datetime
 import os
 import config as cfg
-
 
 class ComprehensiveAnalysisReport:
     """

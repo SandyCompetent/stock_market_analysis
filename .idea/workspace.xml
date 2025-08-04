@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update remote server configuration and project SDK for enhanced deployment and local file handling">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: improve code readability and formatting across multiple files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprehensive_analysis_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/comprehensive_analysis_report.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentiment_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment_analysis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,28 +55,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.comprehensive_analysis_report.executor": "Run",
-    "Python.enhanced_analysis_demo.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "more__logic",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/sandy/PycharmProjects/stock_market_analysis",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.comprehensive_analysis_report.executor&quot;: &quot;Run&quot;,
+    &quot;Python.enhanced_analysis_demo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;more__logic&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sandy/PycharmProjects/stock_market_analysis&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -178,23 +175,9 @@
       <workItem from="1754171170263" duration="724000" />
       <workItem from="1754172088177" duration="1413000" />
       <workItem from="1754256948861" duration="1068000" />
-      <workItem from="1754293823723" duration="18234000" />
-    </task>
-    <task id="LOCAL-00017" summary="feat: New Logic">
-      <option name="closed" value="true" />
-      <created>1752280612428</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1752280612428</updated>
-    </task>
-    <task id="LOCAL-00018" summary="feat: add BBC News CSV file for UK stock market data integration&#10;&#10;Added `bbc_news.csv` containing comprehensive news data to support UK stock market analysis.">
-      <option name="closed" value="true" />
-      <created>1752286166161</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1752286166161</updated>
+      <workItem from="1754293823723" duration="21162000" />
+      <workItem from="1754324232257" duration="3000" />
+      <workItem from="1754326464913" duration="7509000" />
     </task>
     <task id="LOCAL-00019" summary="Update .gitignore to exclude .csv files">
       <option name="closed" value="true" />
@@ -572,7 +555,23 @@
       <option name="project" value="LOCAL" />
       <updated>1754298403493</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="feat: update remote server configuration and project SDK for improved deployment and sentiment analysis processing">
+      <option name="closed" value="true" />
+      <created>1754320599711</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1754320599711</updated>
+    </task>
+    <task id="LOCAL-00067" summary="feat: improve code readability and formatting across multiple files">
+      <option name="closed" value="true" />
+      <created>1754324178520</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1754324178521</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,9 +601,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: update sentiment analysis configuration and model parameters for enhanced performance" />
-    <MESSAGE value="feat: adjust sequence length for stock price prediction model to improve accuracy" />
-    <MESSAGE value="feat: add requirements file for project dependencies" />
     <MESSAGE value="feat: add Streamlit app for interactive data visualization" />
     <MESSAGE value="feat: update workspace configuration for Streamlit app integration" />
     <MESSAGE value="remove: requirements.txt" />
@@ -627,7 +623,10 @@
     <MESSAGE value="feat: add remote server configuration and update project SDK for improved deployment" />
     <MESSAGE value="feat: add enhanced diagnostic plots and comprehensive analysis report generation for stock market predictions" />
     <MESSAGE value="feat: update remote server configuration and project SDK for enhanced deployment and local file handling" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update remote server configuration and project SDK for enhanced deployment and local file handling" />
+    <MESSAGE value="feat: restructure notebook for enhanced readability and replace redundant cells with optimized data processing steps" />
+    <MESSAGE value="feat: update remote server configuration and project SDK for improved deployment and sentiment analysis processing" />
+    <MESSAGE value="feat: improve code readability and formatting across multiple files" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: improve code readability and formatting across multiple files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

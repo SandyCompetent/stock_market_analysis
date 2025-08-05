@@ -38,11 +38,20 @@ def prepare_data_for_lstm(
         X_train.append(train_scaled[i - sequence_length : i, :])
         y_train.append(train_scaled[i, target_idx])
 
-    inputs = np.concatenate((train_scaled[-sequence_length:], test_scaled), axis=0)
+    # Fix data leakage: Create test sequences properly without future information
     X_test, y_test = [], []
-    for i in range(sequence_length, len(inputs)):
-        X_test.append(inputs[i - sequence_length : i, :])
-        y_test.append(inputs[i, target_idx])
+    
+    # For the first test sample, use the last sequence_length samples from training data
+    for i in range(len(test_scaled)):
+        if i < sequence_length:
+            # Use the last (sequence_length - i) samples from training + first i samples from test
+            sequence = np.concatenate((train_scaled[-(sequence_length - i):], test_scaled[:i + 1]), axis=0)
+            X_test.append(sequence[:-1])  # All but the last sample (which is the target)
+            y_test.append(test_scaled[i, target_idx])
+        else:
+            # Use the previous sequence_length samples from test data
+            X_test.append(test_scaled[i - sequence_length:i, :])
+            y_test.append(test_scaled[i, target_idx])
 
     return (
         np.array(X_train),

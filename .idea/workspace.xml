@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: improve code readability and formatting across multiple files">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: remove unnecessary comments and improve code formatting in comprehensive_analysis_report.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprehensive_analysis_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/comprehensive_analysis_report.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,15 +176,7 @@
       <workItem from="1754256948861" duration="1068000" />
       <workItem from="1754293823723" duration="21162000" />
       <workItem from="1754324232257" duration="3000" />
-      <workItem from="1754326464913" duration="7509000" />
-    </task>
-    <task id="LOCAL-00019" summary="Update .gitignore to exclude .csv files">
-      <option name="closed" value="true" />
-      <created>1752355771623</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1752355771624</updated>
+      <workItem from="1754326464913" duration="11123000" />
     </task>
     <task id="LOCAL-00020" summary="feat: add LSTM analysis HTML for USA stock market">
       <option name="closed" value="true" />
@@ -571,7 +562,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754324178521</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="feat: remove unnecessary comments and improve code formatting in comprehensive_analysis_report.py">
+      <option name="closed" value="true" />
+      <created>1754346722512</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1754346722513</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -601,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add Streamlit app for interactive data visualization" />
     <MESSAGE value="feat: update workspace configuration for Streamlit app integration" />
     <MESSAGE value="remove: requirements.txt" />
     <MESSAGE value="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction" />
@@ -626,7 +624,8 @@
     <MESSAGE value="feat: restructure notebook for enhanced readability and replace redundant cells with optimized data processing steps" />
     <MESSAGE value="feat: update remote server configuration and project SDK for improved deployment and sentiment analysis processing" />
     <MESSAGE value="feat: improve code readability and formatting across multiple files" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: improve code readability and formatting across multiple files" />
+    <MESSAGE value="feat: remove unnecessary comments and improve code formatting in comprehensive_analysis_report.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: remove unnecessary comments and improve code formatting in comprehensive_analysis_report.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -641,8 +640,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/stock_market_analysis$utils.coverage" NAME="utils Coverage Results" MODIFIED="1753449031106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/stock_market_analysis$comprehensive_analysis_report.coverage" NAME="comprehensive_analysis_report Coverage Results" MODIFIED="1754319707155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stock_market_analysis$comprehensive_analysis_report.coverage" NAME="comprehensive_analysis_report Coverage Results" MODIFIED="1754346311119" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stock_market_analysis$test.coverage" NAME="test Coverage Results" MODIFIED="1753907105649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/stock_market_analysis$enhanced_analysis_demo.coverage" NAME="enhanced_analysis_demo Coverage Results" MODIFIED="1754257359474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stock_market_analysis$enhanced_analysis_demo.coverage" NAME="enhanced_analysis_demo Coverage Results" MODIFIED="1754346339085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

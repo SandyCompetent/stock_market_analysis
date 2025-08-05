@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: implement LSTM data leakage fix and add verification tests">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_analysis.html" beforeDir="false" />
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update .gitignore to include Backup directory and modify workspace.xml for task management">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,15 +178,7 @@
       <workItem from="1754293823723" duration="21162000" />
       <workItem from="1754324232257" duration="3000" />
       <workItem from="1754326464913" duration="11123000" />
-      <workItem from="1754387652749" duration="11421000" />
-    </task>
-    <task id="LOCAL-00022" summary="chore: delete analysis_using_lstm.html file to clean up unused resources">
-      <option name="closed" value="true" />
-      <created>1752687824132</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1752687824132</updated>
+      <workItem from="1754387652749" duration="12813000" />
     </task>
     <task id="LOCAL-00023" summary="feat: add stock data downloader and LSTM-based sentiment analysis notebooks">
       <option name="closed" value="true" />
@@ -572,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754407976878</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="feat: update .gitignore to include Backup directory and modify workspace.xml for task management">
+      <option name="closed" value="true" />
+      <created>1754408056557</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1754408056557</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +602,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: integrate Kaggle dataset loading and enhance Streamlit app for stock price prediction" />
     <MESSAGE value="refactor: comment out Kaggle dataset loading in data_processing.py and update workspace configuration" />
     <MESSAGE value="feat: enhance plotting functions in utils.py to save figures and improve visualization" />
     <MESSAGE value="style: standardize string quotes and improve code formatting across multiple files" />
@@ -627,7 +626,8 @@
     <MESSAGE value="feat: remove unnecessary comments and improve code formatting in comprehensive_analysis_report.py" />
     <MESSAGE value="feat: add tests for correlation analysis and plotting functionality to verify fixes for 'Date' column ambiguity" />
     <MESSAGE value="feat: implement LSTM data leakage fix and add verification tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implement LSTM data leakage fix and add verification tests" />
+    <MESSAGE value="feat: update .gitignore to include Backup directory and modify workspace.xml for task management" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update .gitignore to include Backup directory and modify workspace.xml for task management" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -23,7 +23,7 @@ RESAMPLE_DATA = True
 # 'H'  - Hourly
 # 'T'  - Minutely
 
-RESAMPLE_FREQUENCY = "1H"
+RESAMPLE_FREQUENCY = "15T"
 SEQUENCE_LENGTH = 30  # Number of days to look back for prediction
 TEST_SIZE = 0.1  # Proportion of data for testing
 

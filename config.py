@@ -1,16 +1,16 @@
 # Analysis Configuration
-STOCK_SYMBOL = "NVDA"  # Target stock symbol
+STOCK_SYMBOL = "EBAY"  # Target stock symbol
 DATASET_DIR = "Dataset"
-OUTPUT_DIR = "Output"
+OUTPUT_DIR = "Output_EBAY"
 NEWS_DATA_FILE = f"{DATASET_DIR}/news_data.csv"
-LOCAL_STOCK_FILE_PATH = f"{DATASET_DIR}/NVDA_stock_data.csv"
+LOCAL_STOCK_FILE_PATH = f"{DATASET_DIR}/EBAY_stock_data.csv"
 
-UPDATE_SENTIMENT_CSV = True  # Set to True to force re-generation of sentiment data
+UPDATE_SENTIMENT_CSV = False  # Set to True to force re-generation of sentiment data
 UPDATE_STOCK_CSV = True  # Set to True to force re-fetching of stock data
-LOAD_LOCAL_STOCK_FILE = True
-OVERWRITE_TUNNER_RESULT = True
+LOAD_LOCAL_STOCK_FILE = False
+OVERWRITE_TUNNER_RESULT = False
 
-RESAMPLE_DATA = True
+RESAMPLE_DATA = False
 
 # Model Parameters
 # 'D'  - Calendar day
@@ -32,7 +32,7 @@ TEST_SIZE = 0.1  # Proportion of data for testing
 # ========================================================
 
 BASELINE_FEATURES = ["Close", "Returns"]
-BASELINE_TARGET = "Returns"
+BASELINE_TARGET = "Close"
 
 # ========================================================
 # TECHNICAL MODEL CONFIGURATION
@@ -59,7 +59,7 @@ TECHNICAL_FEATURES = [
     "VIX_Close",
 ]
 
-TECHNICAL_TARGET = "Returns"
+TECHNICAL_TARGET = "Close"
 
 # ========================================================
 # HYBRID MODEL CONFIGURATION
@@ -90,4 +90,4 @@ HYBRID_FEATURES = [
     "VIX_Close",
 ]
 
-HYBRID_TARGET = "Returns"
+HYBRID_TARGET = "Close"

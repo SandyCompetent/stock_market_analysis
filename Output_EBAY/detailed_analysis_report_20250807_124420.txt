@@ -3,9 +3,9 @@
 COMPREHENSIVE STOCK MARKET ANALYSIS PROJECT REPORT
 ================================================================================
 
-Generated on: 2025-08-04 22:25:48
+Generated on: 2025-08-07 12:44:20
 Project: Stock Market Prediction with Sentiment Analysis
-Target Symbol: NVDA
+Target Symbol: EBAY
 
 ================================================================================
 
@@ -60,13 +60,52 @@ MODEL PERFORMANCE ANALYSIS
 === INDIVIDUAL MODEL ANALYSIS ===
 
 
-**BASELINE SINGLE-LAYER LSTM**
+🏆 **OVERALL BEST PERFORMING MODEL**
+Model: Enhanced SVM
+Total Rank Score: 11
+Key Metrics:
+- RMSE: 0.0226
+- MAE: 0.0164
+- R-squared: -0.0590
+- Directional Accuracy: 55.6%
+
+============================================================
+
+
+=== MODEL RANKING SUMMARY ===
+
+Top 5 Models by Overall Performance:
+1. Enhanced SVM (Total Rank: 11)
+2. Technical SVM (Total Rank: 12)
+3. Baseline SVM (Total Rank: 13)
+4. Single-Layer Technical LSTM (Total Rank: 17)
+5. Baseline GRU (Total Rank: 17)
+
+============================================================
+
+
+**NAIVE BASELINE (Overall Rank: 21)**
 
 Performance Metrics:
-- RMSE: 0.0245
-- MAE: 0.0189  
-- R-squared: 0.3420
-- Directional Accuracy: 52.3%
+- RMSE: 0.0297
+- MAE: 0.0207  
+- R-squared: -0.9452
+- Directional Accuracy: 28.5%
+- MAPE: 1087339.10%
+- MASE: 0.3046
+
+
+============================================================
+
+**BASELINE LSTM (Overall Rank: 18)**
+
+Performance Metrics:
+- RMSE: 0.0327
+- MAE: 0.0284  
+- R-squared: -1.3577
+- Directional Accuracy: 70.2%
+- MAPE: 2907184.97%
+- MASE: 0.4168
 
 
 STRENGTHS:
@@ -89,13 +128,15 @@ RECOMMENDATIONS:
 
 ============================================================
 
-**TECHNICAL MULTI-LAYER LSTM**
+**SINGLE-LAYER TECHNICAL LSTM (Overall Rank: 17)**
 
 Performance Metrics:
-- RMSE: 0.0238
-- MAE: 0.0184  
-- R-squared: 0.3670
-- Directional Accuracy: 54.1%
+- RMSE: 0.0324
+- MAE: 0.0278  
+- R-squared: -1.1792
+- Directional Accuracy: 74.9%
+- MAPE: 2882005.45%
+- MASE: 0.4267
 
 
 STRENGTHS:
@@ -118,13 +159,15 @@ RECOMMENDATIONS:
 
 ============================================================
 
-**HYBRID ENHANCED LSTM**
+**SINGLE-LAYER HYBRID LSTM (Overall Rank: 26)**
 
 Performance Metrics:
-- RMSE: 0.0229
-- MAE: 0.0177  
-- R-squared: 0.3890
-- Directional Accuracy: 56.2%
+- RMSE: 0.0343
+- MAE: 0.0296  
+- R-squared: -1.4423
+- Directional Accuracy: 65.9%
+- MAPE: 2962483.86%
+- MASE: 0.4555
 
 
 STRENGTHS:
@@ -147,13 +190,108 @@ RECOMMENDATIONS:
 
 ============================================================
 
-**BASELINE GRU**
+**MULTI-LAYER BASELINE LSTM (Overall Rank: 22)**
 
 Performance Metrics:
-- RMSE: 0.0241
-- MAE: 0.0187  
-- R-squared: 0.3510
-- Directional Accuracy: 53.2%
+- RMSE: 0.0307
+- MAE: 0.0262  
+- R-squared: -1.0871
+- Directional Accuracy: 40.9%
+- MAPE: 2639794.37%
+- MASE: 0.3853
+
+
+STRENGTHS:
+✓ Excellent at capturing long-term dependencies in time series
+✓ Handles sequential patterns well
+✓ Good performance on non-linear relationships
+✓ Memory cells help with gradient vanishing problem
+
+WEAKNESSES:
+⚠ Computationally expensive
+⚠ Requires large amounts of data
+⚠ Prone to overfitting without proper regularization
+⚠ Black-box nature makes interpretation difficult
+
+RECOMMENDATIONS:
+→ Consider attention mechanisms for better interpretability
+→ Implement early stopping and dropout for regularization
+→ Experiment with bidirectional LSTM for better context
+→ Add batch normalization for training stability
+
+============================================================
+
+**MULTI-LAYER TECHNICAL LSTM (Overall Rank: 31)**
+
+Performance Metrics:
+- RMSE: 0.0324
+- MAE: 0.0279  
+- R-squared: -1.1829
+- Directional Accuracy: 52.9%
+- MAPE: 3027266.80%
+- MASE: 0.4295
+
+
+STRENGTHS:
+✓ Excellent at capturing long-term dependencies in time series
+✓ Handles sequential patterns well
+✓ Good performance on non-linear relationships
+✓ Memory cells help with gradient vanishing problem
+
+WEAKNESSES:
+⚠ Computationally expensive
+⚠ Requires large amounts of data
+⚠ Prone to overfitting without proper regularization
+⚠ Black-box nature makes interpretation difficult
+
+RECOMMENDATIONS:
+→ Consider attention mechanisms for better interpretability
+→ Implement early stopping and dropout for regularization
+→ Experiment with bidirectional LSTM for better context
+→ Add batch normalization for training stability
+
+============================================================
+
+**MULTI-LAYER HYBRID LSTM (Overall Rank: 27)**
+
+Performance Metrics:
+- RMSE: 0.0327
+- MAE: 0.0282  
+- R-squared: -1.2220
+- Directional Accuracy: 72.6%
+- MAPE: 3063455.22%
+- MASE: 0.4341
+
+
+STRENGTHS:
+✓ Excellent at capturing long-term dependencies in time series
+✓ Handles sequential patterns well
+✓ Good performance on non-linear relationships
+✓ Memory cells help with gradient vanishing problem
+
+WEAKNESSES:
+⚠ Computationally expensive
+⚠ Requires large amounts of data
+⚠ Prone to overfitting without proper regularization
+⚠ Black-box nature makes interpretation difficult
+
+RECOMMENDATIONS:
+→ Consider attention mechanisms for better interpretability
+→ Implement early stopping and dropout for regularization
+→ Experiment with bidirectional LSTM for better context
+→ Add batch normalization for training stability
+
+============================================================
+
+**BASELINE GRU (Overall Rank: 17)**
+
+Performance Metrics:
+- RMSE: 0.0320
+- MAE: 0.0276  
+- R-squared: -1.2617
+- Directional Accuracy: 57.0%
+- MAPE: 2803111.79%
+- MASE: 0.4061
 
 
 STRENGTHS:
@@ -176,13 +314,15 @@ RECOMMENDATIONS:
 
 ============================================================
 
-**TECHNICAL GRU**
+**TECHNICAL GRU (Overall Rank: 25)**
 
 Performance Metrics:
-- RMSE: 0.0235
-- MAE: 0.0181  
-- R-squared: 0.3710
-- Directional Accuracy: 54.8%
+- RMSE: 0.0322
+- MAE: 0.0277  
+- R-squared: -1.1581
+- Directional Accuracy: 53.4%
+- MAPE: 2964104.16%
+- MASE: 0.4259
 
 
 STRENGTHS:
@@ -205,13 +345,15 @@ RECOMMENDATIONS:
 
 ============================================================
 
-**HYBRID ENHANCED GRU**
+**ENHANCED GRU (Overall Rank: 32)**
 
 Performance Metrics:
-- RMSE: 0.0231
-- MAE: 0.0179  
-- R-squared: 0.3780
-- Directional Accuracy: 55.1%
+- RMSE: 0.0326
+- MAE: 0.0280  
+- R-squared: -1.2048
+- Directional Accuracy: 50.7%
+- MAPE: 2995663.89%
+- MASE: 0.4307
 
 
 STRENGTHS:
@@ -234,13 +376,15 @@ RECOMMENDATIONS:
 
 ============================================================
 
-**BASELINE SVM**
+**BASELINE SVM (Overall Rank: 13)**
 
 Performance Metrics:
-- RMSE: 0.0267
-- MAE: 0.0201  
-- R-squared: 0.2980
-- Directional Accuracy: 49.8%
+- RMSE: 0.0216
+- MAE: 0.0148  
+- R-squared: -0.0361
+- Directional Accuracy: 45.9%
+- MAPE: 84742.08%
+- MASE: 0.2174
 
 
 STRENGTHS:
@@ -263,13 +407,15 @@ RECOMMENDATIONS:
 
 ============================================================
 
-**TECHNICAL SVM**
+**TECHNICAL SVM (Overall Rank: 12)**
 
 Performance Metrics:
-- RMSE: 0.0259
-- MAE: 0.0195  
-- R-squared: 0.3150
-- Directional Accuracy: 51.2%
+- RMSE: 0.0225
+- MAE: 0.0165  
+- R-squared: -0.0492
+- Directional Accuracy: 53.4%
+- MAPE: 579393.83%
+- MASE: 0.2538
 
 
 STRENGTHS:
@@ -292,13 +438,15 @@ RECOMMENDATIONS:
 
 ============================================================
 
-**HYBRID ENHANCED SVM**
+**ENHANCED SVM (Overall Rank: 11)**
 
 Performance Metrics:
-- RMSE: 0.0251
-- MAE: 0.0189  
-- R-squared: 0.3340
-- Directional Accuracy: 52.7%
+- RMSE: 0.0226
+- MAE: 0.0164  
+- R-squared: -0.0590
+- Directional Accuracy: 55.6%
+- MAPE: 691175.48%
+- MASE: 0.2528
 
 
 STRENGTHS:
@@ -318,35 +466,6 @@ RECOMMENDATIONS:
 → Consider ensemble with time-aware models
 → Experiment with different kernels (RBF, polynomial)
 → Use as baseline or ensemble component
-
-============================================================
-
-**ARIMA**
-
-Performance Metrics:
-- RMSE: 0.0289
-- MAE: 0.0218  
-- R-squared: 0.2450
-- Directional Accuracy: 47.6%
-
-
-STRENGTHS:
-✓ Interpretable and explainable results
-✓ Well-established statistical foundation
-✓ Good for trend and seasonality analysis
-✓ Computationally efficient
-
-WEAKNESSES:
-⚠ Assumes linear relationships
-⚠ Requires stationary data
-⚠ Limited ability to capture complex patterns
-⚠ Struggles with regime changes
-
-RECOMMENDATIONS:
-→ Use for baseline comparison and trend analysis
-→ Consider SARIMA for seasonal patterns
-→ Combine with other models in ensemble
-→ Good for confidence interval estimation
 
 ============================================================
 
@@ -540,6 +659,8 @@ Performance Metrics:
 - MAE: 0.0189  
 - R-squared: 0.3420
 - Directional Accuracy: 52.3%
+- MAPE: 12.45%
+- MASE: 0.8900
 
 
 STRENGTHS:
@@ -569,6 +690,8 @@ Performance Metrics:
 - MAE: 0.0184  
 - R-squared: 0.3670
 - Directional Accuracy: 54.1%
+- MAPE: 11.89%
+- MASE: 0.8600
 
 
 STRENGTHS:
@@ -598,6 +721,8 @@ Performance Metrics:
 - MAE: 0.0187  
 - R-squared: 0.3510
 - Directional Accuracy: 53.2%
+- MAPE: 12.12%
+- MASE: 0.8800
 
 
 STRENGTHS:
@@ -627,6 +752,8 @@ Performance Metrics:
 - MAE: 0.0201  
 - R-squared: 0.2980
 - Directional Accuracy: 49.8%
+- MAPE: 13.67%
+- MASE: 0.9500
 
 
 STRENGTHS:
@@ -656,6 +783,8 @@ Performance Metrics:
 - MAE: 0.0218  
 - R-squared: 0.2450
 - Directional Accuracy: 47.6%
+- MAPE: 14.23%
+- MASE: 1.0200
 
 
 STRENGTHS:

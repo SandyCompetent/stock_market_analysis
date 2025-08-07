@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
+    <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update resample frequency to 15 minutes and modify workspace configuration">
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: refactor and optimize notebook by reducing content, adding modular imports, and improving code structure for sentiment and stock data analysis">
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NVDA Result/comprehensive_analysis_report_20250804_150147.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NVDA Result/comprehensive_analysis_report_20250804_222512.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NVDA Result/comprehensive_analysis_report_20250804_222548.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/NVDA Result/main_analysis.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/comprehensive_analysis_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/comprehensive_analysis_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +71,7 @@
     "Python.utils.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "more__logic",
     "junie.onboarding.icon.badge.shown": "true",
@@ -72,6 +81,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.build.tools.auto.reload": "ALL",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
@@ -90,8 +100,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-PY-251.26927.90" />
-        <option value="bundled-python-sdk-41e8cd69c857-64d779b69b7a-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26927.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-PY-252.23892.439" />
+        <option value="bundled-python-sdk-b3ae9b5d7125-f0eec537fc84-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.23892.439" />
       </set>
     </attachedChunks>
   </component>
@@ -178,15 +188,11 @@
       <workItem from="1754293823723" duration="21162000" />
       <workItem from="1754324232257" duration="3000" />
       <workItem from="1754326464913" duration="11123000" />
-      <workItem from="1754387652749" duration="24136000" />
-    </task>
-    <task id="LOCAL-00024" summary="feat: add stock data downloader and LSTM-based sentiment analysis notebooks">
-      <option name="closed" value="true" />
-      <created>1753091477061</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1753091477061</updated>
+      <workItem from="1754387652749" duration="24270000" />
+      <workItem from="1754514071586" duration="178000" />
+      <workItem from="1754514251961" duration="793000" />
+      <workItem from="1754515154544" duration="2645000" />
+      <workItem from="1754565983515" duration="5266000" />
     </task>
     <task id="LOCAL-00025" summary="refactor: streamline `analysis_using_lstm.ipynb` by reducing content and simplifying structure">
       <option name="closed" value="true" />
@@ -572,7 +578,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754409767862</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="feat: refactor and optimize notebook by reducing content, adding modular imports, and improving code structure for sentiment and stock data analysis">
+      <option name="closed" value="true" />
+      <created>1754513920623</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1754513920623</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +616,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: enhance plotting functions in utils.py to save figures and improve visualization" />
     <MESSAGE value="style: standardize string quotes and improve code formatting across multiple files" />
     <MESSAGE value="feat: update feature lists and enhance technical indicators in data processing" />
     <MESSAGE value="feat: add sentiment analysis and enhance stock data processing with technical indicators" />
@@ -627,7 +640,8 @@
     <MESSAGE value="feat: implement LSTM data leakage fix and add verification tests" />
     <MESSAGE value="feat: update .gitignore to include Backup directory and modify workspace.xml for task management" />
     <MESSAGE value="feat: update resample frequency to 15 minutes and modify workspace configuration" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: update resample frequency to 15 minutes and modify workspace configuration" />
+    <MESSAGE value="feat: refactor and optimize notebook by reducing content, adding modular imports, and improving code structure for sentiment and stock data analysis" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor and optimize notebook by reducing content, adding modular imports, and improving code structure for sentiment and stock data analysis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

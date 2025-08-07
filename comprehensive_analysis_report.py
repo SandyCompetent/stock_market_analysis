@@ -63,16 +63,23 @@ The stock market analysis project follows a well-structured modular design:
         }
         self.report_sections.append(analysis)
 
-    def analyze_model_performance(self, results_df=None):
+    def analyze_model_performance(self, results_df=None, ranking_df=None, winner_info=None):
         """Analyze individual model performance and characteristics."""
 
         # If no results provided, create a template analysis
         if results_df is None:
             results_df = self._create_sample_results()
 
+        # Store additional analysis data
+        self.model_analysis = {
+            'results_df': results_df,
+            'ranking_df': ranking_df,
+            'winner_info': winner_info
+        }
+
         analysis = {
             "title": "MODEL PERFORMANCE ANALYSIS",
-            "content": self._generate_model_analysis(results_df),
+            "content": self._generate_model_analysis(results_df, ranking_df, winner_info),
         }
         self.report_sections.append(analysis)
 
@@ -96,26 +103,71 @@ The stock market analysis project follows a well-structured modular design:
             }
         )
 
-    def _generate_model_analysis(self, results_df):
+    def _generate_model_analysis(self, results_df, ranking_df=None, winner_info=None):
         """Generate detailed analysis for each model type."""
         content = """
 === INDIVIDUAL MODEL ANALYSIS ===
 
 """
 
+        # Add winner information if available
+        if winner_info is not None:
+            content += f"""
+🏆 **OVERALL BEST PERFORMING MODEL**
+Model: {winner_info['Model']}
+Total Rank Score: {winner_info['Total_Rank']:.0f}
+Key Metrics:
+- RMSE: {winner_info['RMSE']:.4f}
+- MAE: {winner_info['MAE']:.4f}
+- R-squared: {winner_info['R-squared']:.4f}
+- Directional Accuracy: {winner_info['Directional_Accuracy']:.1f}%
+
+{'='*60}
+
+"""
+
+        # Add ranking summary if available
+        if ranking_df is not None:
+            content += """
+=== MODEL RANKING SUMMARY ===
+
+Top 5 Models by Overall Performance:
+"""
+            top_5 = ranking_df.head(5)
+            for i, (_, row) in enumerate(top_5.iterrows(), 1):
+                content += f"{i}. {row['Model']} (Total Rank: {row['Total_Rank']:.0f})\n"
+            
+            content += f"\n{'='*60}\n\n"
+
         # Analyze each model
         for _, row in results_df.iterrows():
             model_name = row["Model"]
+            
+            # Add ranking information if available
+            rank_info = ""
+            if ranking_df is not None:
+                model_rank_row = ranking_df[ranking_df['Model'] == model_name]
+                if not model_rank_row.empty:
+                    rank = model_rank_row.iloc[0]['Total_Rank']
+                    rank_info = f" (Overall Rank: {rank:.0f})"
+            
             content += f"""
-**{model_name.upper()}**
+**{model_name.upper()}{rank_info}**
 
 Performance Metrics:
 - RMSE: {row['RMSE']:.4f}
 - MAE: {row['MAE']:.4f}  
 - R-squared: {row['R-squared']:.4f}
 - Directional Accuracy: {row['Directional_Accuracy']:.1f}%
-
 """
+            
+            # Add additional metrics if available
+            if 'MAPE (%)' in row:
+                content += f"- MAPE: {row['MAPE (%)']:.2f}%\n"
+            if 'MASE' in row:
+                content += f"- MASE: {row['MASE']:.4f}\n"
+            
+            content += "\n"
 
             # Model-specific analysis
             if "LSTM" in model_name:

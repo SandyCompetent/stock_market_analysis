@@ -3,9 +3,9 @@
 COMPREHENSIVE STOCK MARKET ANALYSIS PROJECT REPORT
 ================================================================================
 
-Generated on: 2025-08-04 22:25:12
+Generated on: 2025-08-07 14:27:09
 Project: Stock Market Prediction with Sentiment Analysis
-Target Symbol: NVDA
+Target Symbol: EBAY
 
 ================================================================================
 
@@ -67,6 +67,8 @@ Performance Metrics:
 - MAE: 0.0189  
 - R-squared: 0.3420
 - Directional Accuracy: 52.3%
+- MAPE: 12.45%
+- MASE: 0.8900
 
 
 STRENGTHS:
@@ -96,6 +98,8 @@ Performance Metrics:
 - MAE: 0.0184  
 - R-squared: 0.3670
 - Directional Accuracy: 54.1%
+- MAPE: 11.89%
+- MASE: 0.8600
 
 
 STRENGTHS:
@@ -125,6 +129,8 @@ Performance Metrics:
 - MAE: 0.0187  
 - R-squared: 0.3510
 - Directional Accuracy: 53.2%
+- MAPE: 12.12%
+- MASE: 0.8800
 
 
 STRENGTHS:
@@ -154,6 +160,8 @@ Performance Metrics:
 - MAE: 0.0201  
 - R-squared: 0.2980
 - Directional Accuracy: 49.8%
+- MAPE: 13.67%
+- MASE: 0.9500
 
 
 STRENGTHS:
@@ -183,6 +191,8 @@ Performance Metrics:
 - MAE: 0.0218  
 - R-squared: 0.2450
 - Directional Accuracy: 47.6%
+- MAPE: 14.23%
+- MASE: 1.0200
 
 
 STRENGTHS:

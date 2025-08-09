@@ -4,17 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: refactor and optimize notebook by reducing content, adding modular imports, and improving code structure for sentiment and stock data analysis">
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1c7f8bc2-9d9b-4c7c-81e4-14286ea86b76" name="Changes" comment="feat: update project configuration for EBAY analysis, including stock symbol change, output directory adjustment, and model performance enhancements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NVDA Result/comprehensive_analysis_report_20250804_150147.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NVDA Result/comprehensive_analysis_report_20250804_222512.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NVDA Result/comprehensive_analysis_report_20250804_222548.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NVDA Result/main_analysis.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/comprehensive_analysis_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/comprehensive_analysis_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output_EBAY/comprehensive_analysis_report_20250807_124420.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output_EBAY/comprehensive_analysis_report_20250807_142709.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output_EBAY/detailed_analysis_report_20250807_124420.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output_EBAY/detailed_analysis_report_20250807_142709.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_analysis.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main_analysis.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/main_analysis.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_analysis_original.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_analysis_performance_tuning.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_analysis_with_additioanl_featire_vfx.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentiment_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/sentiment_analysis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,31 +64,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.comprehensive_analysis_report.executor": "Run",
-    "Python.enhanced_analysis_demo.executor": "Run",
-    "Python.test.executor": "Run",
-    "Python.test_lstm_fix.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "more__logic",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/Users/sandy/PycharmProjects/stock_market_analysis",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.build.tools.auto.reload": "ALL",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.comprehensive_analysis_report.executor&quot;: &quot;Run&quot;,
+    &quot;Python.enhanced_analysis_demo.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_lstm_fix.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;more__logic&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sandy/PycharmProjects/stock_market_analysis&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;ALL&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -192,15 +194,12 @@
       <workItem from="1754514071586" duration="178000" />
       <workItem from="1754514251961" duration="793000" />
       <workItem from="1754515154544" duration="2645000" />
-      <workItem from="1754565983515" duration="5266000" />
-    </task>
-    <task id="LOCAL-00025" summary="refactor: streamline `analysis_using_lstm.ipynb` by reducing content and simplifying structure">
-      <option name="closed" value="true" />
-      <created>1753127817667</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1753127817667</updated>
+      <workItem from="1754565983515" duration="6053000" />
+      <workItem from="1754574385545" duration="15000" />
+      <workItem from="1754574447846" duration="17000" />
+      <workItem from="1754576717790" duration="8550000" />
+      <workItem from="1754741971587" duration="122000" />
+      <workItem from="1754759031044" duration="71000" />
     </task>
     <task id="LOCAL-00026" summary="chore: delete `analysis_using_lstm.ipynb` to remove unused notebook">
       <option name="closed" value="true" />
@@ -586,7 +585,15 @@
       <option name="project" value="LOCAL" />
       <updated>1754513920623</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="feat: update project configuration for EBAY analysis, including stock symbol change, output directory adjustment, and model performance enhancements">
+      <option name="closed" value="true" />
+      <created>1754573596219</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1754573596219</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -616,7 +623,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="style: standardize string quotes and improve code formatting across multiple files" />
     <MESSAGE value="feat: update feature lists and enhance technical indicators in data processing" />
     <MESSAGE value="feat: add sentiment analysis and enhance stock data processing with technical indicators" />
     <MESSAGE value="feat: add SVM and ARIMA models for enhanced stock price prediction" />
@@ -641,7 +647,8 @@
     <MESSAGE value="feat: update .gitignore to include Backup directory and modify workspace.xml for task management" />
     <MESSAGE value="feat: update resample frequency to 15 minutes and modify workspace configuration" />
     <MESSAGE value="feat: refactor and optimize notebook by reducing content, adding modular imports, and improving code structure for sentiment and stock data analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor and optimize notebook by reducing content, adding modular imports, and improving code structure for sentiment and stock data analysis" />
+    <MESSAGE value="feat: update project configuration for EBAY analysis, including stock symbol change, output directory adjustment, and model performance enhancements" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update project configuration for EBAY analysis, including stock symbol change, output directory adjustment, and model performance enhancements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

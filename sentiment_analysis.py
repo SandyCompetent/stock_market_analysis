@@ -84,7 +84,7 @@ def process_news_sentiment(news_df, target_stock):
         company_news["Sentiment"],
         company_news["Confidence"],
         company_news["Sentiment_Score"],
-    ) = analyzer.analyze(company_news["title"], batch_size=32)
+    ) = analyzer.analyze(company_news["title"], batch_size=16)
 
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
@@ -102,8 +102,6 @@ def aggregate_daily_sentiment(sentiment_df):
     sentiment_dummies = pd.get_dummies(sentiment_df["Sentiment"], prefix="Sentiment")
     sentiment_df = pd.concat([sentiment_df, sentiment_dummies], axis=1)
 
-    # --- FIX IS HERE ---
-    # Match the lowercase output of get_dummies: 'Sentiment_positive', etc.
     expected_sentiment_cols = [
         "Sentiment_positive",
         "Sentiment_negative",
